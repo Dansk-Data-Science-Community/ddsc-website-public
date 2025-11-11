@@ -1,0 +1,1732 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Anders Demant van der Weide <antra@antra>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-29 20:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ddsc_web/settings/settings.py:136
+msgid "Danish"
+msgstr "Dansk"
+
+#: ddsc_web/settings/settings.py:137
+msgid "English"
+msgstr "Engelsk"
+
+#: events/decorators.py:34
+msgid "Der er desværre ikke flere pladser til eventet"
+msgstr "Der er desværre ikke flere pladser til eventet"
+
+#: events/forms.py:73
+msgid "Tilmeld"
+msgstr "Tilmeld"
+
+#: events/forms.py:86
+msgid "Beskrivelse af indholdet i eventet"
+msgstr "Beskrivelse af indholdet i eventet"
+
+#: events/forms.py:89 events/models.py:37
+msgid "Titel på eventet"
+msgstr "Titel på eventet"
+
+#: events/forms.py:93
+msgid "Starttidspunkt for eventet"
+msgstr "Starttidspunkt for eventet"
+
+#: events/forms.py:104
+msgid "Sluttidspunkt for eventet"
+msgstr "Sluttidspunkt for eventet"
+
+#: events/forms.py:113 events/models.py:50
+msgid "Hvilken tilmeldingstype skal eventet have?"
+msgstr "Hvilken tilmeldingstype skal eventet have?"
+
+#: events/forms.py:118
+msgid "Resumé af eventet"
+msgstr "Resumé af eventet"
+
+#: events/forms.py:123
+msgid "Ingen vilkår"
+msgstr "Ingen vilkår"
+
+#: events/forms.py:124
+#, fuzzy
+#| msgid "Tak for tilmeldingen!"
+msgid "Vælg vilkår for tilmelding"
+msgstr "Vælg vilkår for telmelding"
+
+#: events/forms.py:170
+msgid "Tidspunkterne skal være i fremtiden"
+msgstr "Tidspunkterne skal være i fremtiden"
+
+#: events/forms.py:174
+msgid "Start tidspunkt skal være før slut tidspunktet"
+msgstr "Start tidspunkt skal være før slut tidspunktet"
+
+#: events/forms.py:183
+msgid "Tilmeldingslinket skal være udfyldt hvis tilmeldingstypen ikke er DDSC"
+msgstr "Tilmeldingslinket skal være udfyldt hvis tilmeldingstypen ikke er DDSC"
+
+#: events/layouts.py:9 shared/layouts.py:9 users/layouts.py:10
+msgid "email adresse"
+msgstr "email adresse"
+
+#: events/layouts.py:20 users/layouts.py:21 users/layouts.py:22
+msgid "fornavn"
+msgstr "fornavn"
+
+#: events/layouts.py:27 users/layouts.py:29 users/layouts.py:30
+msgid "efternavn"
+msgstr "efternavn"
+
+#: events/layouts.py:41
+msgid "starttidspunkt"
+msgstr "starttidspunkt"
+
+#: events/layouts.py:60
+msgid "sluttidspunkt"
+msgstr "sluttidspunkt"
+
+#: events/layouts.py:79
+msgid "titel"
+msgstr "titel"
+
+#: events/layouts.py:91
+msgid "sted"
+msgstr "sted"
+
+#: events/layouts.py:103
+msgid "tilmeldingstype"
+msgstr "tilmeldingstype"
+
+#: events/layouts.py:115
+msgid "eksternt tilmeldingslink"
+msgstr "eksternt tilmeldingslink"
+
+#: events/layouts.py:127
+msgid "maks antal deltagere"
+msgstr "maks antal deltagere"
+
+#: events/layouts.py:137
+msgid "event resumé"
+msgstr "event resumé"
+
+#: events/layouts.py:147
+msgid "event beskrivelse"
+msgstr "event beskrivelse"
+
+#: events/layouts.py:159
+msgid "bynavn"
+msgstr "bynavn"
+
+#: events/layouts.py:172
+msgid "vejnavn og husnummer"
+msgstr "vejnavn og husnummer"
+
+#: events/layouts.py:185
+msgid "postnummer"
+msgstr "postnummer"
+
+#: events/layouts.py:195
+msgid "billed"
+msgstr "billede"
+
+#: events/layouts.py:209 shared/layouts.py:42 users/layouts.py:54
+msgid "Læs og acceptér"
+msgstr "Læs og acceptér"
+
+#: events/layouts.py:209
+msgid "betingelserne for tilmelding"
+msgstr "betingelserne for tilmelding"
+
+#: events/layouts.py:221
+msgid "tilmendingsbetingelser"
+msgstr "tilmeldingsbetingelser"
+
+#: events/models.py:28
+msgid "DDSC tilmelding"
+msgstr "DDSC tilmelding"
+
+#: events/models.py:29
+msgid "Ekstern tilmelding"
+msgstr "Ekstern tilmelding"
+
+#: events/models.py:43
+msgid "Link til event på en ekstern side, hvis det findes. fx. billetto.dk"
+msgstr "Link til event på en ekstern side, hvis det findes. fx. billetto.dk"
+
+#: events/models.py:58
+msgid "Navn på stedet hvor eventet afholdes"
+msgstr "Navn på stedet hvor eventet afholdes"
+
+#: events/models.py:61
+msgid "Start dato og tidspunkt for eventet"
+msgstr "Start dato og tidspunkt for eventet"
+
+#: events/models.py:64
+msgid "Slut dato og tidspunkt for eventet"
+msgstr "Slut dato og tidspunkt for eventet"
+
+#: events/models.py:68
+msgid "Beskrivelse af indholdet i eventet (RTF)"
+msgstr "Beskrivelse af indholdet i eventet (RTF)"
+
+#: events/models.py:122
+msgid "Billed der viser eventet. Vil blive vist på siden sammen med titlen"
+msgstr "Billed der viser eventet. Vil blive vist på siden sammen med titlen"
+
+#: events/models.py:144
+msgid "Pending"
+msgstr "Pending"
+
+#: events/models.py:145
+msgid "Attended"
+msgstr "Attended"
+
+#: events/models.py:160
+msgid "QR kode for tilmeldingen."
+msgstr "QR kode for tilmeldingen."
+
+#: events/models.py:213
+msgid "Custom"
+msgstr "Custom"
+
+#: events/models.py:214
+msgid "Standard"
+msgstr "Standard"
+
+#: events/models.py:217
+msgid "Vilkår for tilmelding til eventet (RTF)"
+msgstr "Vilkår for tilmelding til eventet (RTF)"
+
+#: events/tasks.py:45
+msgid "DDSC event billet"
+msgstr "DDSC event billet"
+
+#: events/templates/events/carousel.html:30
+msgid "Previous"
+msgstr "Forrige"
+
+#: events/templates/events/carousel.html:34
+msgid "Next"
+msgstr "Næste"
+
+#: events/templates/events/create_event.html:7
+#: events/templates/events/create_event.html:13 home/header_navbar.html:38
+msgid "Opret event"
+msgstr "Opret event"
+
+#: events/templates/events/create_event.html:25
+#: events/templates/events/edit_event.html:25
+msgid "Annuller"
+msgstr "Annuller"
+
+#: events/templates/events/create_event.html:28
+#: events/templates/events/edit_event.html:28
+msgid "Gem kladde"
+msgstr "Gem kladde"
+
+#: events/templates/events/create_event.html:31
+#: events/templates/events/edit_event.html:31
+msgid "Publicer"
+msgstr "Publicér"
+
+#: events/templates/events/delete_modal.html:6
+#: events/templates/events/delete_modal.html:18
+msgid "Slet event!"
+msgstr "Slet event!"
+
+#: events/templates/events/delete_modal.html:12
+msgid "Er du sikker på du vil slette eventet med titlen"
+msgstr "Er du sikker på du vil slette eventet med titlen"
+
+#: events/templates/events/detail.html:22
+#: events/templates/events/ticket_detail.html:8
+#: events/templates/events/ticket_email.html:12
+msgid "Resumé"
+msgstr "Resumé"
+
+#: events/templates/events/detail.html:35
+msgid "Udsolgt"
+msgstr "Udsolgt"
+
+#: events/templates/events/detail.html:39
+#: events/templates/events/detail.html:44
+#: events/templates/events/register_event.html:16
+msgid "Tilmeld event"
+msgstr "Tilmeld event"
+
+#: events/templates/events/detail.html:52
+msgid "Beskrivelse"
+msgstr "Beskrivelse"
+
+#: events/templates/events/edit_event.html:7
+#: events/templates/events/edit_event.html:13
+msgid "Rediger event"
+msgstr "Rediger event"
+
+#: events/templates/events/edit_event.html:38
+msgid "Slet"
+msgstr "Slet"
+
+#: events/templates/events/event_ticket.html:16
+#: events/templates/events/modal.html:15
+#: events/templates/events/unregister_event.html:28 home/404.html:19
+#: home/500.html:21 members/templates/members/edit.html:28
+#: polls/templates/polls/forms.html:16 users/forms.py:264
+#: users/templates/users/edit.html:41 users/templates/users/image_modal.html:26
+msgid "Tilbage"
+msgstr "Tilbage"
+
+#: events/templates/events/header.html:10 home/header_navbar.html:34
+msgid "Kommende events"
+msgstr "Kommende events"
+
+#: events/templates/events/header.html:11
+msgid "Meld dig til events her!"
+msgstr "Meld dig til events her!"
+
+#: events/templates/events/list.html:7 events/templates/events/no_events.html:7
+#: events/templates/events/register_event.html:9
+#: events/templates/events/unregister_event.html:9
+msgid "Events"
+msgstr "Events"
+
+#: events/templates/events/list.html:25
+msgid "Rediger kladde"
+msgstr "Rediger kladde"
+
+#: events/templates/events/list.html:29
+msgid "Publiceret event"
+msgstr "Publiceret event"
+
+#: events/templates/events/list.html:49
+msgid "Se mere"
+msgstr "Se mere"
+
+#: events/templates/events/list.html:56
+msgid "Starter d."
+msgstr "Starter d."
+
+#: events/templates/events/list.html:56
+msgid "kl."
+msgstr "kl."
+
+#: events/templates/events/mini_meetup.html:5
+#: events/templates/events/mini_meetup.html:15 home/header_navbar.html:35
+msgid "Mini Meetup"
+msgstr "Mini Meetup"
+
+#: events/templates/events/mini_meetup.html:16
+msgid "Mød communitiet i et hyggeligt og uformelt miljø!"
+msgstr "Mød communitiet i et hyggeligt og uformelt miljø!"
+
+#: events/templates/events/mini_meetup.html:24
+msgid "Hyggeligt og uformelt"
+msgstr "Hyggeligt og uformelt"
+
+#: events/templates/events/mini_meetup.html:25
+msgid ""
+"Har du lyst til at møde det danske data science community et hyggeligt og "
+"uformelt sted? Lyst til at mødes med andre ligesindede data scientists i "
+"Danmark?"
+msgstr ""
+"Har du lyst til at møde det danske data science community et hyggeligt og "
+"uformelt sted? Lyst til at mødes med andre ligesindede data scientists i "
+"Danmark?"
+
+#: events/templates/events/mini_meetup.html:26
+msgid ""
+"Så tag med til Dansk Data Science Community Mini-meetup! Vi mødes ca. en "
+"gang om måneden for at diskutere hvad der rør sig i vores lille fællesskab. "
+"Trends, use cases, professionelle erfaringer eller det seneste AI-meme."
+msgstr ""
+"Så tag med til Dansk Data Science Community Mini-meetup! Vi mødes ca. en "
+"gang om måneden for at diskutere hvad der rør sig i vores lille fællesskab. "
+"Trends, use cases, professionelle erfaringer eller det seneste AI-meme."
+
+#: events/templates/events/mini_meetup.html:40
+msgid "Alle er velkomne!"
+msgstr "Alle er velkomne!"
+
+#: events/templates/events/mini_meetup.html:41
+msgid ""
+"Alt og alle er velkomne. Og husk at tage en ven og det gode humør med med. "
+"Vi ses!"
+msgstr ""
+"Alt og alle er velkomne. Og husk at tage en ven og det gode humør med med. "
+"Vi ses!"
+
+#: events/templates/events/mini_meetup.html:55
+#: events/templates/events/time_and_place.html:4
+msgid "Tid og sted"
+msgstr "Tid og sted"
+
+#: events/templates/events/mini_meetup.html:56
+msgid ""
+"Meetups er typisk torsdage eller fredage, det er typisk mellem 16:30 og "
+"18:30 og announceres typisk 2-3 uger i forvejen inde på Slack kanalen."
+msgstr ""
+"Meetups er typisk torsdage eller fredage, det er typisk mellem 16:30 og "
+"18:30 og announceres typisk 2-3 uger i forvejen inde på Slack kanalen."
+
+#: events/templates/events/no_events.html:14
+msgid "Ingen events fundet"
+msgstr "Ingen events fundet"
+
+#: events/templates/events/no_events.html:16
+msgid "Der er desværre ingen kommende events i øjeblikket"
+msgstr "Der er desværre ingen kommende events i øjeblikket"
+
+#: events/templates/events/register_event.html:24
+#, fuzzy
+#| msgid "Du er allerede tilmeldt dette event"
+msgid "Du er ved at tilmelde dig eventet"
+msgstr "Du er ved at tilmelde dig eventet"
+
+#: events/templates/events/register_event.html:25
+msgid "Vær venlig at bekræfte nedenstående oplysninger eller ændre dem"
+msgstr "Vær venlig at bekræfte nedenstående oplysninger eller ændre dem"
+
+#: events/templates/events/register_event.html:25
+#: users/templates/auth/password_reset_confirm.html:20
+msgid "her"
+msgstr "her"
+
+#: events/templates/events/terms_modal.html:7
+msgid "Tilmeldingsbetingelser"
+msgstr "Tilmeldingsbetingelser"
+
+#: events/templates/events/terms_modal.html:16
+msgid "Der er ikke angivet nogen tilmeldingsbetingelser"
+msgstr "Der er ikke angivet nogen tilmeldingsbetingelser"
+
+#: events/templates/events/terms_modal.html:20
+#: members/templates/members/register_done.html:28
+#: members/templates/privacy/privacy_modal.html:16
+#: users/templates/auth/activation_done.html:18
+#: users/templates/auth/activation_failed.html:18
+#: users/templates/auth/activation_pending.html:18
+#: users/templates/auth/password_reset_complete.html:18
+#: users/templates/auth/password_reset_done.html:18
+msgid "Ok"
+msgstr "Ok"
+
+#: events/templates/events/time_and_place.html:8
+msgid "Den"
+msgstr "Den"
+
+#: events/templates/events/time_and_place.html:9
+msgid "Kl."
+msgstr "Kl."
+
+#: events/templates/events/unregister_event.html:15
+msgid "Afmeld event"
+msgstr "Afmeld event"
+
+#: events/templates/events/unregister_event.html:27
+#: users/templates/users/dashboard.html:55
+msgid "Afmeld"
+msgstr "Afmeld"
+
+#: events/validators.py:9
+#, python-format
+msgid ""
+"%(value)s er ugyldigt. Rækkefølgen på billedet skal angives som positivt tal"
+msgstr ""
+"%(value)s er ugyldigt. Rækkefølgen på billedet skal angives som positivt tal"
+
+#: events/validators.py:19
+#, python-format
+msgid ""
+"%(value)s er ugyldigt. Maksimum deltagere skal være et positivt tal større "
+"end 0"
+msgstr ""
+"%(value)s er ugyldigt. Maksimum deltagere skal være et positivt tal større "
+"end 0"
+
+#: events/views.py:125
+msgid "You need to be a member to signup for an event"
+msgstr ""
+
+#: events/views.py:150
+msgid "Du er allerede tilmeldt dette event"
+msgstr "Du er allerede tilmeldt dette event"
+
+#: events/views.py:153
+msgid "Noget gik galt"
+msgstr "Noget gik galt"
+
+#: home/404.html:8 home/500.html:8
+msgid "Fejl"
+msgstr "Fejl"
+
+#: home/404.html:15
+msgid "Siden findes ikke!"
+msgstr "Siden findes ikke!"
+
+#: home/404.html:17
+msgid "Vi kunne desværre ikke finde hvad du ledte efter"
+msgstr "Vi kunne desværre ikke finde hvad du ledte efter"
+
+#: home/500.html:15
+msgid "Ups! Noget gik galt..."
+msgstr "Ups! Noget gik galt..."
+
+#: home/500.html:17
+msgid "Hvis du vil fejlmeddele dette, så skriv til"
+msgstr "Hvis du vil fejlmeddele dette, så skriv til"
+
+#: home/footer.html:13
+msgid "Copyright"
+msgstr "Copyright"
+
+#: home/footer.html:14 home/home.html:5 home/home.html:12 members/tasks.py:33
+msgid "Dansk Data Science Community"
+msgstr "Dansk Data Science Community"
+
+#: home/footer.html:16 members/templates/privacy/privacy.html:6
+#: members/templates/privacy/privacy.html:11
+#: members/templates/privacy/privacy_modal.html:7
+msgid "Databeskyttelse"
+msgstr "Databeskyttelse"
+
+#: home/footer.html:17
+msgid "CVR:"
+msgstr "CVR:"
+
+#: home/header_navbar.html:17
+msgid "Projekter"
+msgstr "Projekter"
+
+#: home/header_navbar.html:20
+msgid "Lønstatistik"
+msgstr "Lønstatistik"
+
+#: home/header_navbar.html:26 members/templates/members/register.html:6
+#: members/templates/members/register.html:16
+#: members/templates/members/register_done.html:6
+msgid "Bliv medlem"
+msgstr "Bliv medlem"
+
+#: home/header_navbar.html:47 members/templates/members/board.html:9
+#: members/templates/members/header.html:10
+msgid "Bestyrelsen"
+msgstr "Bestyrelsen"
+
+#: home/header_navbar.html:48 members/templates/members/articles.html:5
+msgid "Vedtægter"
+msgstr "Vedtægter"
+
+#: home/header_navbar.html:49
+#, fuzzy
+#| msgid "Lønstatistik"
+msgid "Statistik"
+msgstr "Lønstatistik"
+
+#: home/header_navbar.html:52 polls/templates/polls/no_polls.html:6
+msgid "Afstemninger"
+msgstr "Afstemninger"
+
+#: home/header_navbar.html:66
+msgid "Log ud"
+msgstr "Log ud"
+
+#: home/header_navbar.html:68 users/forms.py:49
+#: users/templates/auth/login.html:6 users/templates/auth/login.html:7
+#: users/templates/auth/password_reset_confirm.html:28
+#: users/templates/users/register.html:20
+msgid "Log ind"
+msgstr "Log ind"
+
+#: home/home.html:13
+msgid "Et fællesskab for Data Scientists"
+msgstr "Et fællesskab for Data Scientists"
+
+#: home/home.html:21
+msgid "Community"
+msgstr "Community"
+
+#: home/home.html:22
+msgid ""
+"I communitiet arbejder vi med at styrke fællesskabet og relationerne i det "
+"danske Data Science miljø."
+msgstr ""
+"I communitiet arbejder vi med at styrke fællesskabet og relationerne i det "
+"danske Data Science miljø."
+
+#: home/home.html:23
+msgid ""
+"Vi organiserer alle der beskæftiger sig med Data Science værende "
+"professionelle, studerende og entusiaster."
+msgstr ""
+"Vi organiserer alle der beskæftiger sig med Data Science værende "
+"professionelle, studerende og entusiaster."
+
+#: home/home.html:38
+msgid "Open-Source"
+msgstr "Open-Source"
+
+#: home/home.html:39
+msgid ""
+"Vi arbejder for at styrke dansk Open-Source kultur gennem organisering af "
+"åbne projekter."
+msgstr ""
+"Vi arbejder for at styrke dansk Open-Source kultur gennem organisering af "
+"åbne projekter."
+
+#: home/home.html:40
+msgid ""
+"Vi mener et styrket open-source miljø vil gavne alle gennem øget samarbejde "
+"mellem virksomheder og organisationer."
+msgstr ""
+"Vi mener et styrket open-source miljø vil gavne alle gennem øget samarbejde "
+"mellem virksomheder og organisationer."
+
+#: home/projects.html:12
+msgid "Meet-up events"
+msgstr "Meet-up events"
+
+#: home/projects.html:13
+msgid ""
+"Vær med til at arrangere events for Data Scientists over hele landet! Savner "
+"du et fagligt fællesskab? Vi holder oplæg, inspirerer og udforsker State Of "
+"The Art teknologier."
+msgstr ""
+"Vær med til at arrangere events for Data Scientists over hele landet! Savner "
+"du et fagligt fællesskab? Vi holder oplæg, inspirerer og udforsker State Of "
+"The Art teknologier."
+
+#: home/projects.html:24
+msgid "Networking"
+msgstr "Networking"
+
+#: home/projects.html:25
+msgid ""
+"Vi lærer hinanden at kende og skaber netværk på tværs af Data Science "
+"communitiet. Vi deler erfaringer, problemer og løsninger i en praktisk "
+"hverdag som Data Scientist."
+msgstr ""
+"Vi lærer hinanden at kende og skaber netværk på tværs af Data Science "
+"communitiet. Vi deler erfaringer, problemer og løsninger i en praktisk "
+"hverdag som Data Scientist."
+
+#: home/projects.html:39
+msgid "Faglige oplæg"
+msgstr "Faglige oplæg"
+
+#: home/projects.html:40
+msgid ""
+"Bliv aktiv deltager gennem faglige oplæg til events. Det kunne fx være "
+"indenfor NLP, Explainable AI, Data-centric ML eller noget helt tredje..."
+msgstr ""
+"Bliv aktiv deltager gennem faglige oplæg til events. Det kunne fx være "
+"indenfor NLP, Explainable AI, Data-centric ML eller noget helt tredje..."
+
+#: members/forms.py:49
+msgid "stillingsbetegnelse"
+msgstr "stillingsbetegnelse"
+
+#: members/layouts.py:10 shared/models.py:17
+msgid "Vejnavn og husnummer"
+msgstr "Vejnavn og husnummer"
+
+#: members/layouts.py:23 shared/models.py:19
+msgid "Postnummer"
+msgstr "Postnummer"
+
+#: members/layouts.py:30
+msgid "By"
+msgstr "By"
+
+#: members/layouts.py:43
+msgid "Kontingent beløb"
+msgstr "Kontingent beløb"
+
+#: members/models.py:12
+msgid "Formand"
+msgstr "Formand"
+
+#: members/models.py:13
+msgid "Næstformand"
+msgstr "Næstformand"
+
+#: members/models.py:14
+msgid "Øvrigt medlem"
+msgstr "Øvrigt medlem"
+
+#: members/models.py:15
+msgid "Bestyrelsesmedlem"
+msgstr "Bestyrelsesmedlem"
+
+#: members/models.py:16
+msgid "Suppleant"
+msgstr ""
+
+#: members/models.py:19
+msgid "Afventer godkendelse"
+msgstr "Afventer godkendelse"
+
+#: members/models.py:20
+msgid "Aktiv"
+msgstr "Aktiv"
+
+#: members/models.py:25
+msgid "Medlem af foreningen DDSC"
+msgstr "Medlem af foreningen DDSC"
+
+#: members/models.py:28
+msgid "Du er allerede medlem af foreningen."
+msgstr "Du er allerede medlem af foreningen."
+
+#: members/models.py:42
+msgid "Titel"
+msgstr "Titel"
+
+#: members/models.py:44
+msgid ""
+"Din stillingsbetegnelse, fx. Data Analyst, Data Scientist, Data Engineer etc."
+msgstr ""
+"Din stillingsbetegnelse, fx. Data Analyst, Data Scientist, Data Engineer etc."
+
+#: members/models.py:51
+msgid "Administrations felt til skift i medlemmers aktuelle status"
+msgstr "Administrations felt til skift i medlemmers aktuelle status"
+
+#: members/models.py:68
+msgid "Medlemsadresse til kontingent betaling etc."
+msgstr "Medlemsadresse til kontingent betaling etc."
+
+#: members/tasks.py:19
+msgid "Velkommen til Dansk Data Science Community"
+msgstr "Velkommen til Dansk Data Science Community!"
+
+#: members/templates/members/board.html:29
+msgid "ddsc-email"
+msgstr "ddsc-email"
+
+#: members/templates/members/board.html:35
+msgid "Medlem siden"
+msgstr "Medlem siden"
+
+#: members/templates/members/cancel_membership.html:6
+#: members/templates/members/modal.html:6
+msgid "Udmeldelse"
+msgstr "Udmeldelse"
+
+#: members/templates/members/edit.html:7 users/templates/users/edit.html:8
+msgid "Rediger profil"
+msgstr "Rediger profil"
+
+#: members/templates/members/edit.html:14
+#: users/templates/users/dashboard.html:14 users/templates/users/edit.html:15
+msgid "Min profil"
+msgstr "Min profil"
+
+#: members/templates/members/edit.html:23
+msgid "Medlemstitel:"
+msgstr "Medlemstitel:"
+
+#: members/templates/members/edit.html:29 users/forms.py:257
+#: users/templates/users/edit.html:42 users/templates/users/image_modal.html:27
+msgid "Gem"
+msgstr "Gem"
+
+#: members/templates/members/header.html:11
+msgid "Dine repræsentanter i foreningen!"
+msgstr ""
+
+#: members/templates/members/modal.html:12
+msgid ""
+"Er du sikker på du vil melde dig ud af foreningen for Dansk Data Science "
+"Community?"
+msgstr ""
+"Er du sikker på du vil melde dig ud af foreningen for Dansk Data Science "
+"Community?"
+
+#: members/templates/members/modal.html:17
+msgid "Udmeld"
+msgstr "Udmeld"
+
+#: members/templates/members/register.html:17
+msgid "Vi ville elske at have dig som medlem!"
+msgstr "Vi ville elske at have dig som medlem!"
+
+#: members/templates/members/register.html:22
+msgid "Indmeldelsesblanket"
+msgstr "Indmeldelsesblanket"
+
+#: members/templates/members/register.html:25
+msgid ""
+"Tilmeld dig DDSC for at blive medlem af Danmarks største community for data "
+"science entusiaster!"
+msgstr ""
+"Tilmeld dig DDSC for at blive medlem af Danmarks største community for data "
+"science entusiaster!"
+
+#: members/templates/members/register.html:26
+msgid "Medlemskabet er gratis og du er medlem som privat person."
+msgstr "Medlemskabet er gratis og du er medlem som privat person."
+
+#: members/templates/members/register.html:27
+msgid "Som medlem af DDSC får du mulighed for:"
+msgstr "Som medlem af DDSC får du mulighed for:"
+
+#: members/templates/members/register.html:28
+msgid "at tilmelde dig events på ddsc.io"
+msgstr "at tilmelde dig events på ddsc.io"
+
+#: members/templates/members/register.html:29
+msgid "at mødes og netværke med ligesindede"
+msgstr "at mødes og netværke med ligesindede"
+
+#: members/templates/members/register.html:30
+msgid "at deltage i foreningsudvalg og være med til at arrangere events"
+msgstr "at deltage i foreningsudvalg og være med til at arrangere events"
+
+#: members/templates/members/register.html:31
+msgid "at bidrage til open source projekter under DDSC-brandet"
+msgstr "at bidrage til open source projekter under DDSC-brandet"
+
+#: members/templates/members/register.html:37
+msgid "Indmeld"
+msgstr "Indmeld"
+
+#: members/templates/members/register_done.html:13
+msgid "Indmeldelse"
+msgstr "Indmeldelse"
+
+#: members/templates/members/register_done.html:22
+msgid "Tak fordi du har meldt dig ind i Dansk Data Science Community!"
+msgstr "Tak fordi du har meldt dig ind i Dansk Data Science Community!"
+
+#: members/templates/members/register_done.html:23
+msgid ""
+"Din medlemsstatus bliver aktiv når indmeldelsesblanketten er gået igennem."
+msgstr ""
+"Din medlemsstatus bliver aktiv når indmeldelsesblanketten er gået igennem."
+
+#: members/templates/members/welcome_email.html:13
+msgid "Velkommen!"
+msgstr "Velkommen"
+
+#: members/templates/members/welcome_email.html:17
+#: users/templates/auth/activation_email.html:3
+msgid "Velkommen til Dansk Data Science Community!"
+msgstr "Velkommen til Dansk Data Science Community!"
+
+#: members/templates/members/welcome_email.html:19
+#, python-format
+msgid ""
+"\n"
+"                    Hej %(full_name)s! Vi er enormt glade for at have dig "
+"med ombord. DDSC er sat i verdenen for at samle folk med interesse for Data "
+"Science og vi håber at du vil finde værdi i at deltage i vores community.\n"
+"                    Foreningen er til for dig og vi opfordrer til at bruge "
+"den til de ting der måtte give mening for dig.\n"
+"                    Det kan fx være du har en eventmager i maven og gerne "
+"vil være med til at arrangere events i samarbejde med organisationer rundt "
+"omkring i Danmark.\n"
+"                    Det kan også være du brænder for Open source og kan "
+"bruge communitiet til at finde fællesskaber der samarbejder omkring "
+"kodeudvikling.\n"
+"                    "
+msgstr ""
+
+#: members/templates/members/welcome_email.html:27
+msgid ""
+"\n"
+"                    Som en god start på rejsen vil vi invitere dig til vores "
+"Slack workspace. \n"
+"                    Der finder du en række kanaler, der alle har til formål "
+"at give en platform for at interaggere med dine ligesindede medlemmer.\n"
+"                    Der sker mange ting derinde og mange initiativer starter "
+"med en uformel snak derinde.\n"
+"                    Derudover ses vi ofte i uformelle sammenhænge "
+"rundtomkring i landet. Hold øje med mini-meetups eller små events.\n"
+"                    "
+msgstr ""
+
+#: members/templates/members/welcome_email.html:38
+msgid ""
+"\n"
+"                    Til sidst vil vi bare endnu engang sige velkommen! Vi "
+"håber du vil blive glad for at være medlem.\n"
+"                    "
+msgstr ""
+
+#: members/templates/members/welcome_email.html:43
+msgid ""
+"\n"
+"                    De bedste hilsner fra Bestyrelsen i Dansk Data Science "
+"Community\n"
+"                    "
+msgstr ""
+
+#: members/templates/privacy/privacy.html:12
+msgid "Databeskyttelse i Dansk Data Science Community"
+msgstr "Databeskyttelse i Dansk Data Science Community"
+
+#: members/templates/privacy/privacy_text.html:3
+msgid "Persondatapolitik i Dansk Data Science Community"
+msgstr "Persondatapolitik i Dansk Data Science Community"
+
+#: members/templates/privacy/privacy_text.html:4
+msgid ""
+"Vi indhenter kun persondata i de tilfælde, hvor dette er relevant for dig og "
+"for din aktivitet hos Dansk Data Science Community, herunder på vores "
+"hjemmeside www.ddsc.io."
+msgstr ""
+"Vi indhenter kun persondata i de tilfælde, hvor dette er relevant for dig og "
+"for din aktivitet hos Dansk Data Science Community, herunder på vores "
+"hjemmeside www.ddsc.io."
+
+#: members/templates/privacy/privacy_text.html:5
+msgid ""
+"Ved indsamling, behandling og anvendelse af dine persondata overholder vi "
+"altid alle relevante lovbestemmelser."
+msgstr ""
+"Ved indsamling, behandling og anvendelse af dine persondata overholder vi "
+"altid alle relevante lovbestemmelser."
+
+#: members/templates/privacy/privacy_text.html:6
+msgid ""
+"Vi opbevarer kun dine persondata, så længe vi enten er pålagt en juridisk "
+"forpligtelse til det, eller så længe det er relevant for den hensigt, "
+"hvormed de blev indsamlet."
+msgstr ""
+"Vi opbevarer kun dine persondata, så længe vi enten er pålagt en juridisk "
+"forpligtelse til det, eller så længe det er relevant for den hensigt, "
+"hvormed de blev indsamlet."
+
+#: members/templates/privacy/privacy_text.html:8
+msgid "Oplysninger vi indsamler"
+msgstr "Oplysninger vi indsamler"
+
+#: members/templates/privacy/privacy_text.html:9
+msgid ""
+"Hvis du ønsker at have en bruger på ddsc.io, modtage nyhedsbreve eller være "
+"medlem af DDSC har vi brug for at indsamle visse persondata for fx. at kunne "
+"gennemføre oprettelse af bruger og medlemskab."
+msgstr ""
+"Hvis du ønsker at have en bruger på ddsc.io, modtage nyhedsbreve eller være "
+"medlem af DDSC har vi brug for at indsamle visse persondata for fx. at kunne "
+"gennemføre oprettelse af bruger og medlemskab."
+
+#: members/templates/privacy/privacy_text.html:10
+msgid ""
+"Vi kan indhente oplysninger som fx. navn, e-mailadresse og motivation for "
+"medlemskab mm."
+msgstr ""
+"Vi kan indhente oplysninger som fx. navn, e-mailadresse og motivation for "
+"medlemskab mm."
+
+#: members/templates/privacy/privacy_text.html:12
+msgid ""
+"Dansk Data Science Community indsamler og behandler dine persondata, når du "
+"foretager en eller flere af nedenstående:"
+msgstr ""
+"Dansk Data Science Community indsamler og behandler dine persondata, når du "
+"foretager en eller flere af nedenstående:"
+
+#: members/templates/privacy/privacy_text.html:14
+msgid "Opretter en brugerkonto"
+msgstr "Opretter en brugerkonto"
+
+#: members/templates/privacy/privacy_text.html:15
+msgid "Melder dig ind i DDSC’s forening"
+msgstr "Melder dig ind i DDSC’s forening"
+
+#: members/templates/privacy/privacy_text.html:16
+msgid "Tilmelder dig vores nyhedsbrev"
+msgstr "Tilmelder dig vores nyhedsbrev"
+
+#: members/templates/privacy/privacy_text.html:17
+msgid "Tilmelder dig et event"
+msgstr "Tilmelder dig et event"
+
+#: members/templates/privacy/privacy_text.html:21
+msgid "Den dataansvarlige"
+msgstr "Den dataansvarlige"
+
+#: members/templates/privacy/privacy_text.html:22
+msgid ""
+"Den dataansvarlige for indsamling, behandling og anvendelse af dine "
+"personoplysninger på www.ddsc.io er Dansk Data Science Community."
+msgstr ""
+"Den dataansvarlige for indsamling, behandling og anvendelse af dine "
+"personoplysninger på www.ddsc.io er Dansk Data Science Community."
+
+#: members/templates/privacy/privacy_text.html:24
+msgid "Behandlingsgrundlag og formål"
+msgstr "Behandlingsgrundlag og formål"
+
+#: members/templates/privacy/privacy_text.html:25
+msgid ""
+"Dine almindelige kontaktoplysninger som navn indhenter vi for at kunne "
+"adressere dig som person. Din e-mailadresse indhenter vi for at kunne sende "
+"dig nyhedsbreve og for at give dig en sikker loginmetode"
+msgstr ""
+"Dine almindelige kontaktoplysninger som navn indhenter vi for at kunne "
+"adressere dig som person. Din e-mailadresse indhenter vi for at kunne sende "
+"dig nyhedsbreve og for at give dig en sikker loginmetode"
+
+#: members/templates/privacy/privacy_text.html:26
+msgid ""
+"Din stillingsbetegnelse og fødselsdato bruger vi i aggregeret form for at "
+"kende, hvordan stillingstyperne og alder fordeler sig blandt medlemmer i "
+"foreningen"
+msgstr ""
+"Din stillingsbetegnelse og fødselsdato bruger vi i aggregeret form for at "
+"kende, hvordan stillingstyperne og alder fordeler sig blandt medlemmer i "
+"foreningen"
+
+#: members/templates/privacy/privacy_text.html:28
+#, fuzzy
+#| msgid ""
+#| "Hvis du på vores hjemmeside har givet os dit samtykke hertil, bruger vi "
+#| "din e-mailadresse til udsendelse af et nyhedsbrev. Du kan til enhver tid "
+#| "til- og afmelde dig nyhedsbrevet på din brugers profil. Du kan til enhver "
+#| "tid tilbagekalde dit samtykket og stoppe behandlingen af dine persondata."
+msgid ""
+"Hvis du på vores hjemmeside har givet os dit samtykke hertil, bruger vi din "
+"e-mailadresse til udsendelse af et nyhedsbrev. Vi anvender platformen "
+"MailerLite til udsendelse af nyhedsbreve. Databehandleraftalen mellem "
+"MailerLite og Dansk Data Science Community kan læses i MailerLites <a "
+"href=\"https://www.mailerlite.com/legal/privacy-policy\">generelle "
+"databehandleraftale</a>. Du kan til enhver tid til- og afmelde dig "
+"nyhedsbrevet på din brugers profil. Du kan til enhver tid tilbagekalde dit "
+"samtykket og stoppe behandlingen af dine persondata."
+msgstr ""
+"Hvis du på vores hjemmeside har givet os dit samtykke hertil, bruger vi din "
+"e-mailadresse til udsendelse af et nyhedsbrev. Du kan til enhver tid til- og "
+"afmelde dig nyhedsbrevet på din brugers profil. Du kan til enhver tid "
+"tilbagekalde dit samtykket og stoppe behandlingen af dine persondata."
+
+#: members/templates/privacy/privacy_text.html:29
+msgid ""
+"Dine oplysninger vil blive slettet med det samme efter din bruger slettes. "
+"De oplysninger der anvendes i forbindelse med medlemskab i foreningen "
+"slettes automatisk, så snart medlemskabet ophører. Alle andre relaterede "
+"oplysninger til din bruger vil ligeledes blive slettet. Fx tidligere "
+"tilmeldte events."
+msgstr ""
+"Dine oplysninger vil blive slettet med det samme efter din bruger slettes. "
+"De oplysninger der anvendes i forbindelse med medlemskab i foreningen "
+"slettes automatisk, så snart medlemskabet ophører. Alle andre relaterede "
+"oplysninger til din bruger vil ligeledes blive slettet. Fx tidligere "
+"tilmeldte events."
+
+#: members/templates/privacy/privacy_text.html:31
+msgid "Andre modtagere af personoplysninger"
+msgstr "Andre modtagere af personoplysninger"
+
+#: members/templates/privacy/privacy_text.html:32
+msgid ""
+"Vi sælger ikke dine persondata til tredjepart, og vi overfører ikke dine "
+"persondata til tredjelande."
+msgstr ""
+"Vi sælger ikke dine persondata til tredjepart, og vi overfører ikke dine "
+"persondata til tredjelande."
+
+#: members/templates/privacy/privacy_text.html:33
+msgid ""
+"Vi har vores hjemmeside hos DigitalOcean, som fungerer som vores "
+"databehandler. Alle persondata som du oplyser på vores hjemmeside vil blive "
+"opbevaret i DigitalOceans datacentre indenfor EU. Databehandleraftalen "
+"imellem DigitalOcean og Dansk Data Science Community kan læses i deres"
+msgstr ""
+"Vi har vores hjemmeside hos DigitalOcean, som fungerer som vores "
+"databehandler. Alle persondata som du oplyser på vores hjemmeside vil blive "
+"opbevaret i DigitalOceans datacentre indenfor EU. Databehandleraftalen "
+"imellem DigitalOcean og Dansk Data Science Community kan læses i deres"
+
+#: members/templates/privacy/privacy_text.html:33
+msgid "generelle databehandleraftale"
+msgstr "generelle databehandleraftale"
+
+#: members/templates/privacy/privacy_text.html:34
+msgid ""
+"Vi anvender ikke eksterne virksomheder som leverandører af services eller "
+"andet, der gør brug af dine persondata til kommercielle formål."
+msgstr ""
+"Vi anvender ikke eksterne virksomheder som leverandører af services eller "
+"andet, der gør brug af dine persondata til kommercielle formål."
+
+#: members/templates/privacy/privacy_text.html:36
+msgid "Anvendelse af cookies"
+msgstr "Anvendelse af cookies"
+
+#: members/templates/privacy/privacy_text.html:37
+msgid "Som led i sikkerhedsforanstaltninger på ddsc.io anvender vi"
+msgstr "Som led i sikkerhedsforanstaltninger på ddsc.io anvender vi"
+
+#: members/templates/privacy/privacy_text.html:37
+msgid "proxy, som er en tredjepart service."
+msgstr "proxy, som er en tredjepart service."
+
+#: members/templates/privacy/privacy_text.html:38
+msgid ""
+"Cloudflare benytter sig af nødvendige cookies for at levere sikkerhed på "
+"ddsc.io. Behandling af cookies sker i Cloudflares datacenter i USA som "
+"beskrevet i section 7 i Cloudflares"
+msgstr ""
+"Cloudflare benytter sig af nødvendige cookies for at levere sikkerhed på "
+"ddsc.io. Behandling af cookies sker i Cloudflares datacenter i USA som "
+"beskrevet i section 7 i Cloudflares"
+
+#: members/templates/privacy/privacy_text.html:38
+msgid "privatpolitik"
+msgstr "privatpolitik"
+
+#: members/templates/privacy/privacy_text.html:39
+msgid ""
+"Cookies anvendes ikke til kommercielle formål eller med henblik på at tracke "
+"din individuelle adfærd på ddsc.io. I det omfang data anvendes til analyse, "
+"sker det udelukkende i aggregeret form. Du kan læse mere om anvendelse af "
+"cookies i Cloudflares"
+msgstr ""
+"Cookies anvendes ikke til kommercielle formål eller med henblik på at tracke "
+"din individuelle adfærd på ddsc.io. I det omfang data anvendes til analyse, "
+"sker det udelukkende i aggregeret form. Du kan læse mere om anvendelse af "
+"cookies i Cloudflares"
+
+#: members/templates/privacy/privacy_text.html:39
+msgid "cookiepolicy"
+msgstr "cookiepolicy"
+
+#: members/templates/privacy/privacy_text.html:41
+msgid "Dine rettigheder"
+msgstr "Dine rettigheder"
+
+#: members/templates/privacy/privacy_text.html:42
+msgid ""
+"Som den bruger og registreret på www.ddsc.io har du en række rettigheder, "
+"som vi til enhver tid vil sikre opfyldelse af. Du har ret til at anmode os "
+"om følgende:"
+msgstr ""
+"Som den bruger og registreret på www.ddsc.io har du en række rettigheder, "
+"som vi til enhver tid vil sikre opfyldelse af. Du har ret til at anmode os "
+"om følgende:"
+
+#: members/templates/privacy/privacy_text.html:44
+msgid "At få adgang til og få rettet/ændret dine persondata"
+msgstr "At få adgang til og få rettet/ændret dine persondata"
+
+#: members/templates/privacy/privacy_text.html:45
+msgid "At få slettet persondata"
+msgstr "At få slettet persondata"
+
+#: members/templates/privacy/privacy_text.html:47
+msgid ""
+"Du har derudover ret til at gøre indsigelse over behandlingen af dine "
+"personlige data og indgive klage til en databeskyttelsesmyndighed."
+msgstr ""
+"Du har derudover ret til at gøre indsigelse over behandlingen af dine "
+"personlige data og indgive klage til en databeskyttelsesmyndighed."
+
+#: members/templates/privacy/privacy_text.html:48
+msgid ""
+"Ønsker du ikke længere, at vi skal behandle dine personoplysninger, eller at "
+"vi skal begrænse behandlingen af dine personoplysninger, kan du også sende "
+"os en anmodning herom til vores e-mailadresse"
+msgstr ""
+"Ønsker du ikke længere, at vi skal behandle dine personoplysninger, eller at "
+"vi skal begrænse behandlingen af dine personoplysninger, kan du også sende "
+"os en anmodning herom til vores e-mailadresse"
+
+#: members/views.py:103
+msgid "Der var fejl"
+msgstr "Der var fejl"
+
+#: members/views.py:123
+msgid "Dit medlemsskab blev opdateret"
+msgstr "Dit medlemsskab blev opdateret"
+
+#: members/views.py:125
+msgid "Der var fejl i opdatering af dit medlemsskab"
+msgstr "Der var fejl i opdatering af dit medlemsskab"
+
+#: news/templates/news/subscribe_news.html:3
+msgid "Abonner på Nyhedsbrev"
+msgstr "Abonner på Nyhedsbrev"
+
+#: news/templates/news/subscribe_news.html:7
+msgid "Indtast email"
+msgstr "Indtast email"
+
+#: news/templates/news/subscribe_news.html:8
+msgid "Abonner"
+msgstr "Abonner"
+
+#: news/templates/news/subscribe_success.html:5
+msgid "Nyhedsbrev"
+msgstr "Nyhedsbrev"
+
+#: news/templates/news/subscribe_success.html:15
+msgid "Tak for tilmeldingen!"
+msgstr "Tak for tilmeldingen!"
+
+#: news/templates/news/subscribe_success.html:16
+msgid "Vi har fået din anmodning om at modtage nyhedsbrev på"
+msgstr "Vi har fået din anmodning om at modtage nyhedsbrev på"
+
+#: news/templates/news/subscribe_success.html:16
+msgid "Tjek din email!"
+msgstr "Tjek din email!"
+
+#: polls/forms.py:8
+msgid "Vælg"
+msgstr "Vælg"
+
+#: polls/models.py:13
+msgid "Titlen på afstemningen"
+msgstr "Titlen på afstemningen"
+
+#: polls/models.py:16
+msgid "Beskrivelse af indholdet i afstemningen"
+msgstr "Beskrivelse af indholdet i afstemningen"
+
+#: polls/models.py:21
+msgid "Forfatteren til afstemningen"
+msgstr "Forfatteren til afstemningen"
+
+#: polls/models.py:28
+msgid "Er afstemningen anonym?"
+msgstr "Er afstemningen anonym?"
+
+#: polls/templates/polls/forms.html:14
+msgid "Afgiv stemme"
+msgstr "Afgiv stemme"
+
+#: polls/templates/polls/header.html:10
+#: polls/templates/polls/poll_result.html:9
+msgid "Aktive afstemninger"
+msgstr "Aktive afstemninger"
+
+#: polls/templates/polls/header.html:11
+msgid "Vær med til at give din mening til kende!"
+msgstr ""
+
+#: polls/templates/polls/index.html:5 polls/templates/polls/poll_detail.html:5
+msgid "Afstemning"
+msgstr "Afstemning"
+
+#: polls/templates/polls/index.html:18
+msgid "Se resultater"
+msgstr "Se resultater"
+
+#: polls/templates/polls/index.html:25
+msgid "Gennemført"
+msgstr "Gennemført"
+
+#: polls/templates/polls/index.html:27
+msgid "Deltag"
+msgstr "Deltag"
+
+#: polls/templates/polls/no_polls.html:12
+msgid "Ingen afstemninger fundet"
+msgstr "Ingen afstemninger fundet"
+
+#: polls/templates/polls/no_polls.html:13
+msgid "Der er ingen aktive afstemninger i øjeblikket"
+msgstr "Der er ingen aktive afstemninger i øjeblikket"
+
+#: polls/templates/polls/poll_result.html:5
+msgid "Afstemningsresultat"
+msgstr "Afstemningsresultat"
+
+#: polls/templates/polls/poll_result.html:29
+msgid "Afgivet stemmer"
+msgstr "Afgivet stemmer"
+
+#: polls/templates/polls/poll_result.html:30
+msgid "Andel stemmer"
+msgstr "Andel stemmer"
+
+#: polls/views.py:41 polls/views.py:68
+msgid "Du har allerede svaret på afstemningen"
+msgstr "Du har allerede svaret på afstemningen"
+
+#: polls/views.py:79
+msgid "Tak for deltagelse i afstemningen"
+msgstr "Tak for deltagelse i afstemningen"
+
+#: shared/forms.py:14 shared/layouts.py:20 users/forms.py:129
+msgid "Fornavn"
+msgstr "Fornavn"
+
+#: shared/forms.py:20 shared/layouts.py:27 users/forms.py:130
+msgid "Efternavn"
+msgstr "Efternavn"
+
+#: shared/layouts.py:42 users/layouts.py:54
+msgid "betingelserne for databeskyttelse"
+msgstr "betingelserne for databeskyttelse"
+
+#: shared/layouts.py:55
+msgid "Ja tak, jeg vil gerne modtage nyhedsbreve fra DDSC"
+msgstr "Ja tak, jeg vil gerne modtage nyhedsbreve fra DDSC"
+
+#: shared/layouts.py:68
+msgid "Stillingsbetegnelse"
+msgstr "Stillingsbetegnelse"
+
+#: shared/models.py:11
+msgid "Region Nordjylland"
+msgstr "Region Nordjylland"
+
+#: shared/models.py:12
+msgid "Region Midtjylland"
+msgstr "Region Midtjylland"
+
+#: shared/models.py:13
+msgid "Region Syddanmark"
+msgstr "Region Syddanmark"
+
+#: shared/models.py:14
+msgid "Region Hovedstaden"
+msgstr "Region Hovedstaden"
+
+#: shared/models.py:15
+msgid "Region Sjælland"
+msgstr "Region Sjælland"
+
+#: shared/models.py:21
+msgid "Bynavn"
+msgstr "Bynavn"
+
+#: shared/models.py:24
+msgid "Region"
+msgstr "Region"
+
+#: shared/validators.py:9
+#, python-format
+msgid "%(value)s er ugyldigt. Postnummeret skal have 4 cifre"
+msgstr "%(value)s er ugyldigt. Postnummeret skal have 4 cifre"
+
+#: stats/views.py:95
+#, python-brace-format
+msgid "{form.errors}"
+msgstr ""
+
+#: users/forms.py:58 users/forms.py:200
+msgid "Adgangskode"
+msgstr "Adgangskode"
+
+#: users/forms.py:59 users/layouts.py:41
+msgid "adgangskode"
+msgstr "adgangskode"
+
+#: users/forms.py:62
+msgid "Gentag adgangskode"
+msgstr "Gentag adgangskode"
+
+#: users/forms.py:63 users/forms.py:89 users/forms.py:351
+msgid "gentag adgangskode"
+msgstr "gentag adgangskode"
+
+#: users/forms.py:100
+msgid "Opret"
+msgstr "Opret"
+
+#: users/forms.py:113 users/forms.py:274
+msgid "Adgangskoderne er ikke ens."
+msgstr "Adgangskoderne er ikke ens."
+
+#: users/forms.py:201 users/forms.py:223
+msgid "nuværende adgangskode"
+msgstr "nuværende adgangskode"
+
+#: users/forms.py:204 users/templates/auth/password_reset_complete.html:4
+#: users/templates/auth/password_reset_complete.html:5
+msgid "Ny adgangskode"
+msgstr "Ny adgangskode"
+
+#: users/forms.py:205 users/forms.py:235 users/forms.py:339
+msgid "ny adgangskode"
+msgstr "ny adgangskode"
+
+#: users/forms.py:208
+msgid "Gentag ny adgangskode"
+msgstr "Gentag ny adgangskode"
+
+#: users/forms.py:209 users/forms.py:247
+msgid "gentag ny adgangskode"
+msgstr "gentag ny adgangskode"
+
+#: users/forms.py:292
+msgid "Send mail"
+msgstr "Send mail"
+
+#: users/forms.py:361
+msgid "Bekræft"
+msgstr "Bekræft"
+
+#: users/models.py:19
+msgid "email address"
+msgstr "email adresse"
+
+#: users/models.py:22
+msgid "bruger er allerede oprettet med denne email adresse"
+msgstr "bruger er allerede oprettet med denne email adresse"
+
+#: users/models.py:25
+msgid "first name"
+msgstr "fornavn"
+
+#: users/models.py:26
+msgid "last name"
+msgstr "efternavn"
+
+#: users/models.py:28
+msgid "staff status"
+msgstr "admin status"
+
+#: users/models.py:30
+msgid "Bestemmer om en bruger kan logge ind som administrator"
+msgstr "Bestemmer om en bruger kan logge ind som administrator"
+
+#: users/models.py:33
+msgid "active"
+msgstr "aktiv"
+
+#: users/models.py:35
+msgid "Bestemmer om en bruger er aktiv eller ej"
+msgstr "Bestemmer om en bruger er aktiv eller ej"
+
+#: users/models.py:38
+msgid "verified"
+msgstr "bekræftet"
+
+#: users/models.py:40
+msgid "Bestemmer om brugeren har bekræftet validiteten af sin email"
+msgstr "Bestemmer om brugeren har bekræftet validiteten af sin email"
+
+#: users/models.py:42
+msgid "Oprettet dato"
+msgstr "Oprettet dato"
+
+#: users/models.py:74
+msgid "user"
+msgstr "bruger"
+
+#: users/models.py:75
+msgid "users"
+msgstr "brugere"
+
+#: users/models.py:88 users/models.py:89
+#: users/templates/users/dashboard.html:29
+msgid "Fødselsdato"
+msgstr "Fødselsdato"
+
+#: users/models.py:122
+msgid "Profilbillede der vises offentligt"
+msgstr "Profilbillede der vises offentligt"
+
+#: users/tasks.py:17
+msgid "Aktiver din konto"
+msgstr "Aktiver din konto"
+
+#: users/templates/auth/activation_done.html:4
+msgid "Aktivering"
+msgstr "Aktivering"
+
+#: users/templates/auth/activation_done.html:5
+msgid "Konto aktiveret!"
+msgstr "Konto aktiveret!"
+
+#: users/templates/auth/activation_done.html:11
+msgid "Din konto blev succesfuldt aktiveret!"
+msgstr "Din konto blev succesfuldt aktiveret!"
+
+#: users/templates/auth/activation_done.html:14
+msgid "Du kan nu logge ind med din bruger."
+msgstr "Du kan nu logge ind med din bruger."
+
+#: users/templates/auth/activation_email.html:5
+msgid "Hvis det ikke er dig, der har oprettet en konto på"
+msgstr "Hvis det ikke er dig, der har oprettet en konto på"
+
+#: users/templates/auth/activation_email.html:5
+msgid "skal du blot ignorere denne mail"
+msgstr "skal du blot ignorere denne mail"
+
+#: users/templates/auth/activation_email.html:7
+msgid ""
+"Før du kan gå igang med at bruge din ny-oprettede konto vil vi bede dig om "
+"at bekræfte din email adresse via nedenstående link:"
+msgstr ""
+"Før du kan gå igang med at bruge din ny-oprettede konto vil vi bede dig om "
+"at bekræfte din email adresse via nedenstående link:"
+
+#: users/templates/auth/activation_failed.html:4
+#: users/templates/auth/activation_failed.html:5
+msgid "Aktivering fejlet"
+msgstr "Aktivering fejlet"
+
+#: users/templates/auth/activation_failed.html:11
+msgid "Der gik noget galt i aktivering af din konto."
+msgstr "Der gik noget galt i aktivering af din konto."
+
+#: users/templates/auth/activation_failed.html:14
+msgid "Log ind med din bruger for at gensende mail til aktivering af konto."
+msgstr "Log ind med din bruger for at gensende mail til aktivering af konto."
+
+#: users/templates/auth/activation_pending.html:4
+#: users/templates/auth/activation_pending.html:5
+msgid "Aktivering mangler"
+msgstr "Aktivering mangler"
+
+#: users/templates/auth/activation_pending.html:11
+msgid "Din konto er endnu ikke aktiveret."
+msgstr "Din konto er endnu ikke aktiveret."
+
+#: users/templates/auth/activation_pending.html:14
+msgid "Tjek email indbakken for"
+msgstr "Tjek email indbakken for"
+
+#: users/templates/auth/activation_pending.html:14
+msgid "Vi har sendt en mail med link til aktivering"
+msgstr "Vi har sendt en mail med link til aktivering"
+
+#: users/templates/auth/auth_messages.html:9
+msgid "Fejl!"
+msgstr "Fejl!"
+
+#: users/templates/auth/login.html:21
+#: users/templates/auth/password_reset_form.html:24
+msgid "Har du ikke en konto?"
+msgstr "Har du ikke en konto?"
+
+#: users/templates/auth/login.html:21
+#: users/templates/auth/password_reset_form.html:24
+#: users/templates/users/register.html:6 users/templates/users/register.html:7
+msgid "Opret konto"
+msgstr "Opret konto"
+
+#: users/templates/auth/login.html:24
+msgid "Glemt din adgangskode?"
+msgstr "Glemt din adgangskode?"
+
+#: users/templates/auth/password_change_done.html:4
+#: users/templates/auth/password_change_done.html:5
+msgid "Adgangskode skiftet"
+msgstr "Adgangskode skiftet"
+
+#: users/templates/auth/password_change_done.html:11
+msgid "Din adgangskode er blevet skiftet."
+msgstr "Din adgangskode er blevet skiftet."
+
+#: users/templates/auth/password_change_done.html:14
+msgid "Vend tilbage til dit dashboard"
+msgstr "Vend tilbage til dit dashboard"
+
+#: users/templates/auth/password_change_form.html:6
+#: users/templates/auth/password_change_form.html:7
+#: users/templates/users/edit.html:24
+msgid "Skift adgangskode"
+msgstr "Skift adgangskode"
+
+#: users/templates/auth/password_reset_complete.html:11
+msgid "Du har successfuldt ændret din adgangskode. Du kan nu"
+msgstr "Du har successfuldt ændret din adgangskode. Du kan nu"
+
+#: users/templates/auth/password_reset_complete.html:11
+msgid "logge på"
+msgstr "logge på"
+
+#: users/templates/auth/password_reset_complete.html:11
+msgid "igen"
+msgstr "igen"
+
+#: users/templates/auth/password_reset_complete.html:14
+msgid "Har du fortsat problemer med login, så kontakt os på"
+msgstr "Har du fortsat problemer med login, så kontakt os på"
+
+#: users/templates/auth/password_reset_confirm.html:5
+#: users/templates/auth/password_reset_confirm.html:6
+msgid "Gendan adgangskode"
+msgstr "Gendan adgangskode"
+
+#: users/templates/auth/password_reset_confirm.html:12
+msgid "Indtast ny adgangskode og bekræft"
+msgstr "Indtast ny adgangskode og bekræft"
+
+#: users/templates/auth/password_reset_confirm.html:20
+msgid ""
+"Link til gendannelse af adgangskoden er ugyldigt, måske det allerede er "
+"brugt? Anmod om nyt link"
+msgstr ""
+"Link til gendannelse af adgangskoden er ugyldigt, måske det allerede er "
+"brugt? Anmod om nyt link"
+
+#: users/templates/auth/password_reset_confirm.html:25
+msgid "Har du ikke bedt om gendannelse?"
+msgstr "Har du ikke bedt om gendannelse?"
+
+#: users/templates/auth/password_reset_done.html:4
+#: users/templates/auth/password_reset_done.html:5
+msgid "Mail er sendt"
+msgstr "Mail er sendt"
+
+#: users/templates/auth/password_reset_done.html:11
+msgid "Vi har sendt en mail med vejledning til at gendanne adgangskoden."
+msgstr "Vi har sendt en mail med vejledning til at gendanne adgangskoden."
+
+#: users/templates/auth/password_reset_done.html:14
+msgid ""
+"Hvis du ikke modtager en email, så tjek at du har tastet den rigtige email "
+"adresse ind."
+msgstr ""
+"Hvis du ikke modtager en email, så tjek at du har tastet den rigtige email "
+"adresse ind."
+
+#: users/templates/auth/password_reset_email.html:3
+msgid ""
+"Du modtager denne mail fordi nogen har anmodet om gendannelse af "
+"adgangskoden for"
+msgstr ""
+"Du modtager denne mail fordi nogen har anmodet om gendannelse af "
+"adgangskoden for"
+
+#: users/templates/auth/password_reset_email.html:4
+msgid ""
+"Hvis det ikke er dig, der har anmodet om dette skal du blot ignorere denne "
+"mail."
+msgstr ""
+"Hvis det ikke er dig, der har anmodet om dette skal du blot ignorere denne "
+"mail."
+
+#: users/templates/auth/password_reset_email.html:5
+msgid "Ellers følge linket for at gendanne adgangskoden til"
+msgstr "Ellers følge linket for at gendanne adgangskoden til"
+
+#: users/templates/auth/password_reset_form.html:5
+#: users/templates/auth/password_reset_form.html:6
+msgid "Glemt adgangskode"
+msgstr "Glemt adgangskode"
+
+#: users/templates/auth/password_reset_form.html:12
+msgid "Indtast din email adresse i feltet"
+msgstr "Indtast din email adresse i feltet"
+
+#: users/templates/auth/password_reset_form.html:13
+msgid "så sender vi en vejledning til oprettelse af ny adgangskode"
+msgstr "så sender vi en vejledning til oprettelse af ny adgangskode"
+
+#: users/templates/users/dashboard.html:5
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: users/templates/users/dashboard.html:28
+msgid "Email"
+msgstr "Email"
+
+#: users/templates/users/dashboard.html:36
+#: users/templates/users/dashboard.html:79
+msgid "Rediger"
+msgstr "Rediger"
+
+#: users/templates/users/dashboard.html:45
+msgid "Tilmeldte events"
+msgstr "Tilmeldte events"
+
+#: users/templates/users/dashboard.html:68
+msgid "Medlemsskab"
+msgstr "Medlemsskab"
+
+#: users/templates/users/dashboard.html:72
+msgid "Medlemsstatus"
+msgstr "Medlemsstatus"
+
+#: users/templates/users/dashboard.html:76
+msgid "Medlemstitel"
+msgstr "Medlemstitel"
+
+#: users/templates/users/edit.html:23
+msgid "Rediger oplysninger på din profil"
+msgstr "Rediger oplysninger på din profil"
+
+#: users/templates/users/image_modal.html:11
+msgid "Skift billede"
+msgstr "Skift billede"
+
+#: users/templates/users/register.html:20
+msgid "Har du allerede en konto?"
+msgstr "Har du allerede en konto?"
+
+#: users/templates/users/register_done.html:5
+#: users/templates/users/register_done.html:6
+#: users/templates/users/register_done.html:11
+msgid "Velkommen"
+msgstr "Velkommen"
+
+#: users/templates/users/register_done.html:14
+msgid "Din konto er oprettet. Vi har sendt en email til"
+msgstr "Din konto er oprettet. Vi har sendt en email til"
+
+#: users/templates/users/register_done.html:14
+msgid "som vi beder dig verificere"
+msgstr "som vi beder dig verificere"
+
+#: users/templates/users/register_done.html:15
+msgid ""
+"Vi glæder os over at have dig med ombord i Dansk Data Science Community!"
+msgstr ""
+"Vi glæder os over at have dig med ombord i Dansk Data Science Community!"
+
+#: users/templates/users/register_done.html:17
+msgid "OK"
+msgstr "OK"
+
+#: users/views.py:33
+msgid "Ugyldigt login"
+msgstr "Ugyldigt login"
+
+#: users/views.py:188
+msgid "Din profil blev opdateret"
+msgstr "Din profil blev opdateret"
+
+#: users/views.py:190
+msgid "Der var fejl i opdatering af din profil"
+msgstr "Der var fejl i opdatering af din profil"
+
+#: users/views.py:213
+msgid "Dit profil billede blev opdateret"
+msgstr "Dit profil billede blev opdateret"
+
+#: users/views.py:216
+msgid "Der var fejl i opdatering af dit profilbillede"
+msgstr "Der var fejl i opdatering af dit profilbillede"
+
+#~ msgid "Eventkalender"
+#~ msgstr "Eventkalender"
+
+#~ msgid "Data Science Event kalenderen"
+#~ msgstr "Data Science Event kalenderen"
+
+#~ msgid "Hent kalender"
+#~ msgstr "Hent kalender"
+
+#~ msgid "Eventkalenderen"
+#~ msgstr "Eventkalenderen"
+
+#~ msgid "birthdate"
+#~ msgstr "fødselsdato"
+
+#~ msgid "brugernavn"
+#~ msgstr "brugernavn"

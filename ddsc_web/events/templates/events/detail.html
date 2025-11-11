@@ -1,0 +1,50 @@
+{% load static %}
+{% load i18n %}
+{% load thumbnail %}
+{% load cropping %}
+
+{% block content%}
+
+<img src={% if event.images.first %}{% cropped_thumbnail event.images.first "cropping_detail"%}{%else%}{% static "ddsc-logo-base.svg" %}{% endif %} class="img-fluid card-img-top img-rounded" alt="...">
+<section class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h5 class="title text-left">{% translate "Resumé" %}</h5>
+                <p class="text-left">{{event.summary}}</p>
+            </div>
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+                {% include "events/time_and_place.html" with event=event%}
+            </div>
+        </div>
+    </div>
+    {% if  event.signup_type == 'DDSC'%}
+        {% if event.is_sold_out %}
+            <div class="container py-5 text-center">
+                <a class="btn btn-secondary disabled text-white-50 btn-lg" aria-disabled="true" role="button" href="{% url "events:register" id=event.id slug=event.slug %}">{% translate "Udsolgt" %}</a>
+            </div>
+        {% else %}
+            <div class="container py-5 text-center">
+                <a class="btn event-botton-color text-white-50 btn-lg" role="button" href="{% url "events:register" id=event.id slug=event.slug %}">{% translate "Tilmeld event" %}</a>
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="container py-5 text-center">
+            <a class="btn event-botton-color text-white-50 btn-lg" role="button" target="_blank" href={{ event.signup_link }}>{% translate "Tilmeld event" %}</a>
+        </div>
+    {% endif %}
+</section>
+<section class="py-4 bg-light">
+    <div class="container">
+        <div>
+            <div class="container py-4">
+                <h5 class="title text-left">{% translate "Beskrivelse" %}</h5>
+                <p class="text-left">{{ event.description | safe}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

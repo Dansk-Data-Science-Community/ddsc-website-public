@@ -1,0 +1,70 @@
+{% load static %}
+{% load thumbnail %}
+{% load i18n %}
+
+<link rel="stylesheet" href="{% static "css/header_navbar.css" %}">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">
+    <img src="{% static 'ddsc-logo-base.svg' %}" class="mr-3" width="30" height="30">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown {{ projects_active }}">
+        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {% translate "Projekter" %}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="projectsDropdown">
+          <a class="dropdown-item" href={% url 'stats:salary_survey' %}>{% translate "Lønstatistik" %}</a>
+        </div>
+      </li>
+      {% if request.user.is_member %}
+      {% else %}
+      <li class="nav-item {{ members_active }}">
+        <a class="nav-link" href="{% url "members:register_member"%}">{% translate "Bliv medlem" %}</a>
+      </li>
+      {% endif %}
+      <li class="nav-item dropdown {{ events_active }}">
+        <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Events
+        </a>
+        <div class="dropdown-menu" aria-labelledby="eventsDropdown">
+          <a class="dropdown-item" href={% url 'events:event_list' %}>{% translate "Kommende events" %}</a>
+          <a class="dropdown-item" href={% url 'events:mini_meetup' %}>{% translate "Mini Meetup" %}</a>
+          {% if perms.events.add_event %}
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href={% url 'events:create_event' %}>{% translate "Opret event" %}</a>
+          {% endif %}
+        </div>
+      </li>
+      <li class="nav-item dropdown {{ organisation_active }}">
+        <a class="nav-link dropdown-toggle" href="#" id="organisationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Organisation
+        </a>
+        <div class="dropdown-menu" aria-labelledby="organisationDropdown">
+          <a class="dropdown-item" href={% url 'members:board' %}>{% translate "Bestyrelsen" %}</a>
+          <a class="dropdown-item" href={% url 'members:articles' %}>{% translate "Vedtægter" %}</a>
+          <a class="dropdown-item" href={% url 'stats:stats' %}>{% translate "Statistik" %}</a>
+          {% if request.user.is_member %}
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href={% url 'polls:list_polls' %}>{% translate "Afstemninger" %}</a>
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+      {% if request.user.is_authenticated %}
+        {% if request.user.profile.has_image %}
+        {% comment %} TODO: This image doesn't fit in the navbar, so it stretches the navbar size a tiny bit. Figure out a solution here{% endcomment %}
+          <a class="nav-link red-link pl-0 {{ dashboard_active }}" href={% url 'users:dashboard' %}><img class="rounded-circle" src="{{ request.user.profile.image.image|thumbnail_url:'avatar' }}"></img> {{request.user.first_name}}</a>
+        {% else %}
+          <a class="nav-link red-link {{ dashboard_active }}" href={% url 'users:dashboard' %}><i class="far fa-user-circle fa-lg mr-2"></i> {{request.user.first_name}}</a>
+        {% endif %}
+          <span class="nav-link red-link d-none d-lg-block">/</span>
+          <a class="nav-link red-link pl-0 {{ dashboard_active }}" href={% url 'users:logout' %}>{% translate "Log ud" %}</a>
+      {% else %}
+          <a class="nav-link red-link {{ dashboard_active }}" href={% url 'users:login' %}><i class="far fa-user-circle fa-lg mr-2"></i>{% translate "Log ind" %}</a>
+      {% endif %}
+  </div>
+</nav>

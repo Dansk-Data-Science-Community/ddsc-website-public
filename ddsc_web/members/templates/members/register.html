@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}{% translate "Bliv medlem" %}{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/button.css" %}">
+<link rel="stylesheet" href="{% static "css/links.css" %}">
+<link rel="stylesheet" href="{% static "css/members.css" %}">
+
+<header class="py-5 top-header-member">
+    <div class="text-center my-5">
+        <img class="img-fluid rounded-circle mb-4" src={% static 'ddsc-logo-base.svg' %} width="150" height="150"/>
+        <h1 class="text-white fs-3 fw-bolder">{% translate "Bliv medlem" %}</h1>
+        <p class="text-white-50 mb-0">{% translate "Vi ville elske at have dig som medlem!" %}</p>
+    </div>
+</header>
+<div class="container pb-5 pt-3">
+    <div class="col-lg-7 mx-auto">
+        <h1 class="pb-3 pt-3 text-center">{% translate "Indmeldelsesblanket" %}</h1>
+        <div class="card mb-5 bg-light">
+            <div class="card-header">
+                <p>{% translate "Tilmeld dig DDSC for at blive medlem af Danmarks største community for data science entusiaster!" %}</p>
+                <p>{% translate "Medlemskabet er gratis og du er medlem som privat person." %}</p>
+                {% translate "Som medlem af DDSC får du mulighed for:" %}
+                <li>{% translate "at tilmelde dig events på ddsc.io" %}</li>
+                <li>{% translate "at mødes og netværke med ligesindede" %}</li>
+                <li>{% translate "at deltage i foreningsudvalg og være med til at arrangere events" %}</li>
+                <li>{% translate "at bidrage til open source projekter under DDSC-brandet" %}</li>
+            </div>
+            <div class="card-body mb-2">
+                <form action="{{ request.path }}" method="post" class="uniForm">
+                    {% crispy user_form %}
+                    {% crispy member_form %}
+                    <input class="btn button-color text-white-50 float-right" type="submit" value="{% translate "Indmeld" %}">
+                </form>
+                {% include "privacy/privacy_modal.html" %}
+            </div>
+        </div>
+    </div>
+    <div class="container mb-3">
+    </div>
+</div>
+{% endblock content %}

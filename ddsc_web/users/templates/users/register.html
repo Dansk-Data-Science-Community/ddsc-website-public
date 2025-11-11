@@ -1,0 +1,23 @@
+{% extends "auth_base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}{% translate "Opret konto" %}{% endblock %}
+{% block card_title %}{% translate "Opret konto" %}{% endblock %}
+
+{% block content %}
+<div class="card-body">
+    <div class="login-form">
+        <form action="{% url 'users:register' %}" method="post">
+            {% crispy user_form %}
+        </form>
+        {% include "privacy/privacy_modal.html" %}
+    </div>
+</div>
+<div class="card-footer">
+	<div class="d-flex justify-content-center links text-white">
+		{% translate "Har du allerede en konto?" %}<a href="{% url "users:login" %}">{% translate "Log ind" %}</a>
+	</div>
+</div>
+{% endblock %}

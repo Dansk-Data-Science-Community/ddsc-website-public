@@ -1,0 +1,21 @@
+{% extends 'auth_base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Aktivering mangler" %}{% endblock  %}
+{% block card_title %}{% translate "Aktivering mangler" %}!{% endblock  %}
+
+{% block content %}
+<div class="card-body">
+    <div>
+        <p class="text-white py-1">
+            {% translate "Din konto er endnu ikke aktiveret." %}
+        </p>
+        <p class="text-white py-1">
+            {% translate "Tjek email indbakken for" %} <strong>{{user.email}}</strong>. {% translate "Vi har sendt en mail med link til aktivering" %}
+        </p>
+    </div>
+    	<div class="d-flex justify-content-center links text-white py-4">
+		<a class="btn button-color text-white-50" href="{% url "users:login" %}">{% translate "Ok" %}</a>
+	</div>
+</div>
+{% endblock  %}

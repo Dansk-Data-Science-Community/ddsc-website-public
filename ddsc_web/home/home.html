@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate "Dansk Data Science Community" %}{% endblock  %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+        <header class="py-5 top-header-home">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src={% static 'ddsc-logo-base.svg' %} width="150" height="150"/>
+                <h1 class="text-white fs-3 fw-bolder">{% translate "Dansk Data Science Community" %}</h1>
+                <p class="text-white-50 mb-0">{% translate "Et fællesskab for Data Scientists" %}</p>
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="home-text col-lg-6">
+                        <h2>{% translate "Community" %}</h2>
+                        <p class="lead">{% translate "I communitiet arbejder vi med at styrke fællesskabet og relationerne i det danske Data Science miljø." %}</p>
+                        <p class="mb-0">{% translate "Vi organiserer alle der beskæftiger sig med Data Science værende professionelle, studerende og entusiaster." %}</p>
+                        <hr class="mb-0 me-0" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="py-5 middle-image">
+            <!-- Place any content inside here - Text should be white-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="home-text col-lg-6">
+                        <h2>{% translate "Open-Source" %}</h2>
+                        <p class="lead">{% translate "Vi arbejder for at styrke dansk Open-Source kultur gennem organisering af åbne projekter." %}</p>
+                        <p class="mb-0">{% translate "Vi mener et styrket open-source miljø vil gavne alle gennem øget samarbejde mellem virksomheder og organisationer." %}</p>
+                        <hr class="mb-0 me-0" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% include "projects.html" %}
+{% endblock  %}

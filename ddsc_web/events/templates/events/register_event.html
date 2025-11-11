@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load tz %}
+{% load crispy_forms_tags %}
+{% load thumbnail %}
+{% load cropping %}
+{% load i18n %}
+
+{% block title %}{% translate "Events" %}{% endblock  %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static "css/button.css" %}">
+<link rel="stylesheet" href="{% static "css/links.css" %}">
+<div id="content" class="container">
+    <h1 class="title py-3 text-center">{% translate "Tilmeld event" %}</h1>
+</div>
+<div class="container pb-5">
+    <div class="col-lg-7 mx-auto">
+        <div class="card mb-5 bg-light">
+            <img src={% if event.images.first %}{% cropped_thumbnail event.images.first "cropping_detail"%}{%else%}{% static "ddsc-logo-base.svg" %}{% endif %} class="img-fluid card-img-top img-rounded" alt="...">
+            <div class="card-body mb-2">
+                <h4 class="title text-center">{{event.title}}</h4>
+                <p>{% translate "Du er ved at tilmelde dig eventet" %} '<strong>{{event.title}}</strong>'. 
+                    {% translate "Vær venlig at bekræfte nedenstående oplysninger eller ændre dem" %} <a class="link-text" href="{% url "users:edit"%}">{% translate "her" %}</a>
+                </p>
+                {% crispy form %}
+                {% include "events/terms_modal.html" with registration_terms=event.registration_terms %}
+            </div>
+        </div>
+    </div>
+    <div class="container mb-3">
+    </div>
+</div>
+
+{% endblock content %}

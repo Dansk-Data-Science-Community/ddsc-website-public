@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load tz %}
+{% load crispy_forms_tags %}
+{% load thumbnail %}
+{% load cropping %}
+{% load i18n %}
+
+{% block title %}{% translate "Events" %}{% endblock  %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static "css/button.css" %}">
+<div id="content" class="container mb-3 mt-3 pb-2">
+    <h1 class="title py-3 text-center">{% translate "Afmeld event" %}</h1>
+</div>
+<div class="container pb-5 mb-5">
+    <div class="col-lg-7 mx-auto">
+        <div class="card bg-light">
+            <div class="card-header">
+                <h3 class="title">{{registration.event.title}}</h3>
+            </div>
+            <div class="card-body mb-2">
+                {% include "events/ticket_detail.html" with registration=registration%}
+                <form action="{% url "events:unregister" id=registration.id slug=registration.slug %}" method="POST">
+                    {% csrf_token %}
+                <input class="btn button-color text-white-50 text-center float-right" name="delete" type="submit" value="{% translate "Afmeld" %}"/>
+                <input class="btn btn-secondary text-white-50 float-left mr-2" type="reset" value="{% translate "Tilbage" %}" onclick="javascript:history.back();">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-3">
+    </div>
+</div>
+
+
+{% endblock content %}

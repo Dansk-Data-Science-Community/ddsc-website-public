@@ -1,0 +1,32 @@
+{% load thumbnail %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+
+
+<div class="modal fade imagemodal" tabindex="-1" role="dialog" aria-labelledby="imageModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="title">{% translate "Skift billede" %}</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            {% if request.user.profile.has_image %}
+                <img class="img-fluid mx-auto d-block my-2" src="{% thumbnail image_form.image.value 430x360 %}">
+            {% else %}
+                <i class="far fa-user-circle fa-6x my-2"></i>
+            {% endif %}
+            <form action="{% url "users:edit_image" %}" method="post" class="uniForm" enctype="multipart/form-data">
+                {% crispy image_form %}
+        </div>
+                <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary text-white-50 float-left" data-dismiss="modal">{% translate "Tilbage" %}</button>
+                        <input class="btn button-color text-white-50 float-right" type="submit" value="{% translate "Gem" %}">
+                </div>
+            </form>
+      </div>
+    </div>
+</div>

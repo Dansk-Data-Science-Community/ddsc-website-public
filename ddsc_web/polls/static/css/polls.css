@@ -1,0 +1,13 @@
+.vote-button {
+    background-color: rgb(171, 54, 54);
+    border-color: rgb(171, 54, 54);
+}
+
+.vote-button:hover {
+    background-color: rgb(169, 31, 31);
+}
+
+.top-header-polls {
+    background-size: cover;
+    background-image: url("landingpage_polls.jpg");
+}

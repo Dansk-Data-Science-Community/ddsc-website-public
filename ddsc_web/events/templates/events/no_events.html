@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cropping %}
+{% load tz %}
+{% load i18n %}
+
+{% block title %}{% translate "Events" %}{% endblock  %}
+
+{% block content%}
+{% include "events/header.html" %}
+<div id="content" class="container py-5">
+  <div class="text-center my-5">
+      <h1 class="fs-3 fw-bolder">
+      {% translate "Ingen events fundet" %}
+      </h1>
+      <p class="mb-0">{% translate "Der er desværre ingen kommende events i øjeblikket" %}</p>
+  </div>
+</div>
+{% endblock %}

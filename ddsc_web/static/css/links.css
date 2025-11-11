@@ -1,0 +1,21 @@
+.ddsc-link{
+    color: rgb(94, 17, 17);
+    font-weight: normal;
+}
+.ddsc-link:hover{
+    color: rgb(143, 27, 27);
+    text-decoration: none;
+}
+
+.links a{
+    margin-left: 4px;
+    color: rgb(171, 54, 54);
+    }
+    
+    .link-text{
+        color: rgb(171, 54, 54);
+    }
+    
+    .links a:hover{
+        color: rgb(169, 31, 31);
+    }

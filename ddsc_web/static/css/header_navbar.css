@@ -1,0 +1,15 @@
+.subscribe-button-color{
+    background-color: rgb(171, 54, 54);
+    border-color: rgb(171, 54, 54);
+}
+.form-inline button:hover{
+    background-color: rgb(169, 31, 31);
+}
+
+.red-link{
+    color:rgb(171, 54, 54);
+    font-weight: bold;
+}
+.red-link:hover{
+    color: rgb(169, 31, 31);
+}

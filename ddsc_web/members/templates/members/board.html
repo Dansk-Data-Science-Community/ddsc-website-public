@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load thumbnail %}
+{% load tz %}
+{% load cropping %}
+{% load i18n %}
+
+{% block title %}{% translate "Bestyrelsen" %}{% endblock  %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/members.css" %}">
+
+{% include "members/header.html" %}
+<div class="container py-5">
+    <div class="pb-5">
+        <div class="card-columns">
+        {% for member in board_members %}
+        <div class="card mb-5">
+            {% if member.user.profile.has_image %}
+              <img src={% thumbnail member.user.profile.image.image 430x360 crop detail %} class="img-fluid card-img-top img-rounded" alt="User profileimage">
+            {% else %}
+              <img src={% static 'user-circle-regular.svg' %} width="430" height="360" class="img-fluid card-img-top img-rounded" alt="User profileimage">
+            {% endif %}
+            <div class="card-body bg-dark">
+              <h5 class="card-title text-white text-center">{{ member.user.get_full_name }}</h5>
+              <p class="card-text text-white-50 text-center">{{ member.get_title_display }}</p>
+              <div class="text-center text-white-50">
+                <a class="link-text" href="#">{% translate "ddsc-email" %}</a> &emsp;
+              </div>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">
+                {% timezone "Europe/Copenhagen" %}
+                    <p class="text-center py-0 my-0"> {% translate "Medlem siden" %} {{ member.created | date:'d-m-Y'}}</p>
+                {% endtimezone %}
+              </small>
+          </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="mb-5">
+    </div>
+</div>
+{% endblock content %}

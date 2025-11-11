@@ -1,0 +1,30 @@
+{% extends 'base_email.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <h3 class="title">{{ registration.event.title }}</h3>
+<img src="cid:{{ event_image_name }}" class="img-fluid rounded">
+<section class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h5 class="title text-left">{% translate "Resumé" %}</h5>
+                <p class="text-left">{{ registration.event.summary }}</p>
+            </div>
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+                {% include "events/time_and_place.html" with event=registration.event %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-4 bg-light">
+    <div class="container py-5 text-center">
+        <h4 class="title">{{ registration.first_name }} {{ registration.last_name }}</h4>
+        <img src="cid:{{ qr_code_name }}">
+    </div>
+</section>
+    </div>
+{% endblock content %}

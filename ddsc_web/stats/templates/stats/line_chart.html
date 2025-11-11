@@ -1,0 +1,29 @@
+<script>
+    $(document).ready(function() {
+      var ctx = document.getElementById("{{ element_id }}").getContext('2d');
+      var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: {{ labels|safe }},
+          datasets: [{
+            label: '{{ label }}',
+            data: {{ data|safe }},
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                stepSize: {{ stepsize }}
+              }
+            }]
+          }
+        }
+      });
+    });
+</script>

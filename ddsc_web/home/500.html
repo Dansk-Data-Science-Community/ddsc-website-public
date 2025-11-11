@@ -1,0 +1,25 @@
+{% extends 'base_error.html' %}
+
+{% load static %}
+{% load cropping %}
+{% load tz %}
+{% load i18n %}
+
+{% block title %}{% translate "Fejl" %}{% endblock  %}
+
+{% block content%}
+<div id="content" class="container py-5 row">
+    <div class="text-center my-5 mx-auto">
+        <img class="img-fluid rounded-circle mb-4" src={% static 'ddsc-logo-base.svg' %} width="150" height="150" alt="..." />
+        <h1 class="fs-3 fw-bolder text-white">
+        {% translate "Ups! Noget gik galt..." %}
+        </h1>
+        <p class="mb-0 text-white links">{% translate "Hvis du vil fejlmeddele dette, så skriv til"%}
+            <a class="link-text" href="mailto:maintainer.ddsc.io@gmail.com" target="_blank">maintainer.ddsc.io@gmail.com</a> &emsp;
+        </p>
+        <div class="container pt-4">
+          <input class="btn button-color text-white-50 mr-2" type="reset" value="{% translate "Tilbage" %}" onclick="javascript:history.back();">
+        </div>
+    </div>
+  </div>
+{% endblock %}

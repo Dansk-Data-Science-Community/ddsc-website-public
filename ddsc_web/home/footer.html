@@ -1,0 +1,20 @@
+{% load static %}
+{% load i18n %}
+<footer id="footer" class="bg-dark py-2">
+<link rel="stylesheet" href="{% static "css/footer.css" %}">
+    <div class="social d-flex justify-content-center">
+        <a class="mx-2" href="https://www.linkedin.com/groups/9017904/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a class="mx-2" href="https://www.youtube.com/channel/UCVvX7zx417y_VKcCzln3y7Q" target="_blank"><i class="fab fa-youtube" ></i></a>
+        <a class="mx-2" href="https://github.com/Dansk-Data-Science-Community" target="_blank"><i class="fab fa-github"></i></a>
+        <a class="mx-2" href="https://danskdatascie-o8m9638.slack.com" target="_blank"><i class="fab fa-slack"></i></a>
+    </div>
+    <div class="footer container text-center">
+      <p class="m-0 text-center text-white-50">
+        {% translate "Copyright" %} &copy; &emsp;
+      {% translate "Dansk Data Science Community" %} &emsp;
+      <a class="link-text" href="mailto:ddsc.kontakt@gmail.com" target="_blank">ddsc.kontakt@gmail.com</a> &emsp;
+      <a class="link-text" href="/privacy">{% translate "Databeskyttelse" %}</a> &emsp;
+      {% translate "CVR:" %} 43 24 68 44
+      </p>
+    </div>
+</footer>

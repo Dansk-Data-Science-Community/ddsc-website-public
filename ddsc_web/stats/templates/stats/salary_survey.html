@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{% include "stats/bar_chart.html" with values=count labels=answer element_id="frequency_chart" form_id="salary_form" title="Answer count by question"%}
+{% include "stats/bar_chart.html" with values=median labels=answer element_id="salary_chart" form_id="salary_form" title="Median monthly salary (kr.)"%}
+{% endblock scripts %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 pb-5 mx-auto">
+            <h4 class="text-center">Salary survey</h4>
+                <p class="text-sm-left">
+                    The dashboard has been made with the privacy of the respondents in mind. 
+                    This means that only share aggregated data is shared, and variables containing data from less than five people have been excluded. 
+                    This dashboard is under continuous development, with new features to come.
+                </p>
+            <div class="container">
+                <form method="post" class="form-group mx-sm-3", id="salary_form">
+                    {% csrf_token %}
+                    {% crispy form %}
+                </form>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9">
+                <canvas class="embed-responsive-item" id="frequency_chart"></canvas>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9">
+                <canvas class="embed-responsive-item" id="salary_chart"></canvas>
+            </div>
+            <p class="font-weight-lighter">
+                Note: Salaries reported are including pension, and excluding bonuses.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

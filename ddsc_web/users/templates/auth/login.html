@@ -1,0 +1,27 @@
+{% extends "auth_base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}{% translate "Log ind" %}{% endblock %}
+{% block card_title %}{% translate "Log ind" %}{% endblock %}
+
+{% block content %}
+<div class="card-body">
+    <div class="login-form">
+		{% include "auth/auth_messages.html" %}
+        <form action="{% url 'users:login' %}" method="post">
+            {% crispy form %}
+			<input type="hidden" name="next" value="{{ request.GET.next }}"/>
+        </form>
+    </div>
+</div>
+<div class="card-footer">
+	<div class="d-flex justify-content-center links text-white">
+		{% translate "Har du ikke en konto?" %}<a href="{% url "users:register" %}">{% translate "Opret konto" %}</a>
+	</div>
+	<div class="d-flex justify-content-center links text-white">
+		<a href="{% url "users:password_reset" %}">{% translate "Glemt din adgangskode?" %}</a>
+	</div>
+</div>
+{% endblock %}
