@@ -96,11 +96,5 @@ dev = [
     "xenon==0.9.0",
 ]
 
-[tool.black]
-line-length = 88
-target-version = ['py39']
-include = '\.pyi?$'
-extend-exclude = '[^\/]+\/migrations\/?'
-
 [tool.setuptools]
 packages = ["ddsc_web"]
