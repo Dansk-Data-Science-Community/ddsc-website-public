@@ -6,14 +6,32 @@ This is Danish Data Science Communities internal website repository.
 If you are new to the Django webframework please take a look at the [Django documentation](https://www.djangoproject.com)
 
 ### - Installing dependencies (Linux/MacOs)
-In the root folder of the repository you will find a `requirements.txt`.
-While positioned in the root folder, run the following commands.
+
+#### Option 1: Using pyproject.toml (Recommended)
+The project now uses `pyproject.toml` for modern Python package management.
+While positioned in the root folder, run the following commands:
+
+```bash
+python3 -m venv env
+source env/bin/activate
+pip install --upgrade pip
+pip install -e .
+```
+
+To install with development dependencies:
+```bash
+pip install -e ".[dev]"
+```
+
+#### Option 2: Using requirements.txt (Legacy)
+Alternatively, you can still use the legacy requirements files:
 
 ```bash
 python3 -m venv env
 source env/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
+pip install -r dev_requirements.txt  # for development dependencies
 ```
 
 ### - App dependencies
