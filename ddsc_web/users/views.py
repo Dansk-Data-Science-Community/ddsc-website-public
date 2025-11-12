@@ -26,7 +26,6 @@ User = get_user_model()
 
 
 class UserLogin(View):
-
     form_class = LoginForm
     login_template = "auth/login.html"
     activation_pending_template = "auth/activation_pending.html"

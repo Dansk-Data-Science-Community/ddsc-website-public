@@ -14,7 +14,6 @@ UPLOAD_FOLDER = "profile_images/%Y/%m/%d/"
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-
     email = LowercaseEmailField(
         verbose_name=_("email address"),
         unique=True,
