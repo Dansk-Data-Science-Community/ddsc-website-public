@@ -31,7 +31,6 @@ User = get_user_model()
 
 
 class RegisterEventForm(forms.Form):
-
     email = forms.EmailField(
         widget=forms.EmailInput,
         disabled=True,
@@ -78,7 +77,6 @@ class RegisterEventForm(forms.Form):
 
 
 class CreateEventForm(forms.ModelForm):
-
     datetime_format = "%d-%m-%Y %H:%M"
 
     description = forms.CharField(

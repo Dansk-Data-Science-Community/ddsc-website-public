@@ -131,7 +131,6 @@ class EventImage(models.Model):
 
 
 class Address(AbstractAddress):
-
     event = models.OneToOneField(
         Event,
         on_delete=models.CASCADE,
@@ -181,7 +180,6 @@ class EventRegistration(models.Model):
         super(EventRegistration, self).save(*args, **kwargs)
 
     def generate_qrcode(self):
-
         qr = qrcode.QRCode(
             version=1,
             error_correction=qrcode.constants.ERROR_CORRECT_L,

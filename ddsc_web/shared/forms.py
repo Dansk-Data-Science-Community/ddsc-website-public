@@ -7,7 +7,6 @@ from .layouts import full_name_layout
 
 
 class FullNameForm(forms.Form):
-
     first_name = forms.CharField(
         widget=forms.TextInput,
         required=True,
