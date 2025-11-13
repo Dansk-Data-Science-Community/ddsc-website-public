@@ -74,6 +74,7 @@ def share_event(request, id, slug):
 
 # TODO: refaktorer datavalidering ud til form validering i forms.py for RegisterEvent viewet.
 class RegisterEvent(View):
+
     register_event_template = "events/register_event.html"
 
     def setup(self, request, id, slug, *args, **kwargs):
@@ -153,6 +154,7 @@ class RegisterEvent(View):
 
 
 class CreateEvent(LoginRequiredMixin, PermissionRequiredMixin, SaveEventMixin, View):
+
     permission_required = "events.add_event"
     create_event_template = "events/create_event.html"
 
@@ -193,6 +195,7 @@ class CreateEvent(LoginRequiredMixin, PermissionRequiredMixin, SaveEventMixin, V
 
 
 class EditEvent(LoginRequiredMixin, PermissionRequiredMixin, SaveEventMixin, View):
+
     permission_required = "events.change_event"
     edit_event_template = "events/edit_event.html"
 
@@ -249,6 +252,7 @@ class EditEvent(LoginRequiredMixin, PermissionRequiredMixin, SaveEventMixin, Vie
 
 
 class DeleteEvent(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
+
     permission_required = "events.delete_event"
     model = Event
     success_url = "/events"

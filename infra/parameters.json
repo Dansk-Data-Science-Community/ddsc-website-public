@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environment": {
+      "value": "prod"
+    },
+    "appName": {
+      "value": "ddsc"
+    },
+    "postgresAdminUsername": {
+      "value": "django_admin"
+    },
+    "postgresAdminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/{subscription-id}/resourceGroups/{rg-name}/providers/Microsoft.KeyVault/vaults/{vault-name}"
+        },
+        "secretName": "postgres-admin-password"
+      }
+    },
+    "djangoSecretKey": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/{subscription-id}/resourceGroups/{rg-name}/providers/Microsoft.KeyVault/vaults/{vault-name}"
+        },
+        "secretName": "django-secret-key"
+      }
+    },
+    "emailUser": {
+      "value": "your-email@gmail.com"
+    },
+    "emailPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/{subscription-id}/resourceGroups/{rg-name}/providers/Microsoft.KeyVault/vaults/{vault-name}"
+        },
+        "secretName": "email-password"
+      }
+    },
+    "allowedHosts": {
+      "value": "yourdomain.com,www.yourdomain.com"
+    },
+    "customDomain": {
+      "value": "www.yourdomain.com"
+    },
+    "imageTag": {
+      "value": "latest"
+    },
+    "containerRegistryName": {
+      "value": ""
+    }
+  }
+}

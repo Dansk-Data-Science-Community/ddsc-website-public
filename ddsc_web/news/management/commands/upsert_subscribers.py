@@ -82,6 +82,7 @@ class Command(BaseCommand):
 
     def __delete_subscribers(self, unsubscribers: list[dict[str, str | int]]):
         for unsubscriber in unsubscribers:
+
             success = forget_newsletter_subscriber(
                 subscriber_id=unsubscriber["id"],
                 api_url=MAILERLITE_API_URL,
