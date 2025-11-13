@@ -37,3 +37,8 @@ TINYMCE_JS_URL = (
 )
 
 CONSUME_TICKET_ENDPOINT = "https://ddsc.io/events/consume/"
+
+SLACK_INVITATION_LINK = os.environ.get("SLACK_INVITATION_LINK", "https://ddsc.dk/slack")
+SLACK_WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL")
+SLACK_WELCOME_CHANNEL = os.environ.get("SLACK_WELCOME_CHANNEL", "#ddsc-welcome")
+WELCOME_EMAIL_SENDER = os.environ.get("WELCOME_EMAIL_SENDER", "community@ddsc.dk")
