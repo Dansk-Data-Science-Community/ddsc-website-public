@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cropping %}
+{% load tz %}
+{% load i18n %}
+
+{% block title %}{% translate "Events" %}{% endblock  %}
+
+{% block content%}
+
+<link rel="stylesheet" href="{% static "events/events.css" %}">
+<link rel="stylesheet" href="{% static "css/links.css" %}">
+
+{% include "events/header.html" %}
+<section class="py-5">
+<div id="content" class="container mb-5 mt-5 pb-5">
+  <div class="card-columns">
+    {% for event, image in events %}
+      <div class="card" >
+        {% if perms.events.change_event %}
+        <div class="card-header">
+          <div class="row">
+            {% if event.draft %}
+            <div class="col align-items-start">
+              <h6>{% translate "Rediger kladde" %}</h6>
+            </div>
+            {% else %}
+            <div class="col align-items-start">
+              <h6>{% translate "Publiceret event" %}</h6>
+            </div>
+            {% endif %}
+            <div class="col align-self-end">
+          <a role="button" href="{% url "events:edit_event" id=event.id slug=event.slug %}" class="float-right ddsc-link">
+            <i class="fas fa-edit fa-xl"></i>
+          </a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% if image %}
+          <img src={{ image.image.url }} class="img-fluid card-img-top img-rounded" alt="...">
+        {% else %}
+          <img src={% static 'ddsc-logo-base.svg' %} class="img-fluid card-img-top img-rounded">
+        {% endif%}
+        <div class="card-body mb-2 bg-dark">
+          <h5 class="card-title text-white text-center">{{ event.title }}</h5>
+          <p class="card-text text-white-50 text-center">{{ event.summary }}</p>
+          <div class="text-center">
+            <button type="button" class="btn event-botton-color text-white-50" data-toggle="modal" data-target=".{{ event.slug }}">{% translate "Se mere" %}</button>
+          </div>
+          {% include "events/modal.html" with event=event %}
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">
+          {% timezone "Europe/Copenhagen" %}
+          {% translate "Starter d." %} {{ event.start_datetime | date:'d-m-Y'}} {% translate "kl." %} {{ event.start_datetime | date:'H:i'}}
+          {% endtimezone %}
+          </small>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+</section>
+<script>
+  function copyToClipboard(relativeUrl) {
+      const tempInput = document.createElement("input");
+      tempInput.style.position = "absolute";
+      tempInput.style.left = "-9999px";
+      tempInput.value = window.location.origin + relativeUrl;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+      navigator.clipboard.writeText(tempInput.value).then(() => {
+          alert("Link copied to clipboard");
+      }).catch(err => {
+          console.error("Failed to copy: ", err);
+      });
+
+      document.body.removeChild(tempInput);
+  }
+</script>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'privacy/base_privacy.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}{% translate "Databeskyttelse" %}{% endblock title %}
+
+{% block content %}
+<div id="transparent-jumbotron" class="jumbotron jumbotron-fluid transparent">
+    <div class="container text-white">
+        <h1 class="display-4">{% translate "Databeskyttelse" %}</h1>
+        <p class="lead">{% translate "Databeskyttelse i Dansk Data Science Community" %}</p>
+        <hr class="my-4">
+        {% include "privacy/privacy_text.html" %}
+    </div>
+  </div>
+{% endblock content %}

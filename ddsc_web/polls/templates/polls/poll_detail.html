@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate "Afstemning" %}{% endblock  %}
+<link rel="stylesheet" href="{% static "css/button.css" %}">
+
+{% block content %}
+<div id="content" class="container mb-3 mt-3 pb-2">
+    <h1 class="title py-3 text-center">{{ poll.title }}</h1>
+</div>
+<div class="container">
+    <div class="col-lg-8 pb-5 mx-auto">
+        <div class="card mb-3">
+            <div class="card-body mb-4 bg-light">
+                <p class="lead font-weight-bold pb-2">{{ poll.description }}</p>
+                {% include "polls/forms.html" with question_forms=question_forms voter_session=voter_session %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

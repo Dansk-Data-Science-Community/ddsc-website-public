@@ -1,0 +1,51 @@
+{% extends 'base_email.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/welcome_email.css" %}">
+<section class="py-4">
+    <div class="container py-5 text-center">
+        <img src="cid:{{ logo }}">
+    </div>
+</section>
+<div class="container">
+    <h3 class="title">{% translate "Velkommen!"%}</h3>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <p class="text-left">{% translate "Velkommen til Dansk Data Science Community!"%}</p>
+                <p class="text-left">
+                    {% blocktranslate %}
+                    Hej {{ full_name }}! Vi er enormt glade for at have dig med ombord. DDSC er sat i verdenen for at samle folk med interesse for Data Science og vi håber at du vil finde værdi i at deltage i vores community.
+                    Foreningen er til for dig og vi opfordrer til at bruge den til de ting der måtte give mening for dig.
+                    Det kan fx være du har en eventmager i maven og gerne vil være med til at arrangere events i samarbejde med organisationer rundt omkring i Danmark.
+                    Det kan også være du brænder for Open source og kan bruge communitiet til at finde fællesskaber der samarbejder omkring kodeudvikling.
+                    {% endblocktranslate %}
+                </p>
+                <p class="text-left">
+                    {% blocktranslate %}
+                    Som en god start på rejsen vil vi invitere dig til vores Slack workspace. 
+                    Der finder du en række kanaler, der alle har til formål at give en platform for at interaggere med dine ligesindede medlemmer.
+                    Der sker mange ting derinde og mange initiativer starter med en uformel snak derinde.
+                    Derudover ses vi ofte i uformelle sammenhænge rundtomkring i landet. Hold øje med mini-meetups eller små events.
+                    {% endblocktranslate %}
+                    <a class="link" href="{{ slack_invite }}" target="_blank">
+                        Join Slack <i class="fab fa-slack"></i>
+                    </a> 
+                </p>
+                <p class="text-left">
+                    {% blocktranslate %}
+                    Til sidst vil vi bare endnu engang sige velkommen! Vi håber du vil blive glad for at være medlem.
+                    {% endblocktranslate %}
+                </p>
+                <p class="text-left">
+                    {% blocktranslate %}
+                    De bedste hilsner fra Bestyrelsen i Dansk Data Science Community
+                    {% endblocktranslate %}
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}

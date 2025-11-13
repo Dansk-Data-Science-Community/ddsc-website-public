@@ -1,0 +1,15 @@
+.home-text hr {
+  border-color: #d32222;
+  border-width: 0.25rem;
+  width: 40%;
+}
+
+.top-header-home {
+  background-size: cover;
+  background-image: url("../landingpage_community1.jpg");
+}
+
+.middle-image {
+  background-size: cover;
+  background-image: url("../landingpage_community2.jpg");
+}

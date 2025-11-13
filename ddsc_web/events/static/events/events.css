@@ -1,0 +1,18 @@
+.event-botton-color {
+    background-color: rgb(171, 54, 54);
+    border-color: rgb(171, 54, 54);
+}
+
+.card-body .event-botton-color:hover {
+    background-color: rgb(169, 31, 31);
+}
+
+.top-header-meetup {
+    background-size: cover;
+    background-image: url("minimeetup_landingpage.jpg");
+}
+
+.top-header-events {
+    background-size: cover;
+    background-image: url("events_landingpage.jpg");
+}

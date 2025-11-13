@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load tz %}
+{% load i18n %}
+
+{% block title %}{% translate "Opret event" %}{% endblock  %}
+
+{% block content%}
+
+<link rel="stylesheet" href="{% static "css/button.css" %}">
+<div id="content" class="container">
+    <h1 class="title py-3 text-center">{% translate "Opret event" %}</h1>
+</div>
+<div class="container pb-5">
+    <div class="col-lg-9 mx-auto">
+        <div class="pb-4">
+            <form action="{% url "events:create_event" %}" method="post" class="uniForm" enctype="multipart/form-data">
+                {{ event_form.media }}
+                {% crispy address_form %}
+                {% crispy event_form %}
+                {% crispy event_image_form %}
+                <div class="row">
+                    <div class="col align-items-start">
+                        <a class="btn btn-secondary text-white-50 float-left mr-2" role="button" href="{% url "events:event_list" %}">{% translate "Annuller" %}</a>
+                    </div>
+                    <div class="col align-items-center">
+                        <input class="btn btn-outline-dark float-right" type="submit" name="save_draft" value={% translate "Gem kladde" %}>
+                    </div>                    
+                    <div class="col align-items-end">
+                        <input class="btn button-color text-white-50 float-right" type="submit" name="publish_event" value={% translate "Publicer" %}>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container mb-3">
+    </div>
+</div>
+
+{% endblock  %}

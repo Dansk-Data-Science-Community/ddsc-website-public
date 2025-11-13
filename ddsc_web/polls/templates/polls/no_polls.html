@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load tz %}
+{% load i18n %}
+
+{% block title %}{% translate "Afstemninger" %}{% endblock  %}
+
+{% block content%}
+{% include "polls/header.html" %}
+<div id="content" class="container py-5">
+  <div class="text-center my-5">
+      <h1 class="fs-3 fw-bolder">{% translate "Ingen afstemninger fundet" %}</h1>
+      <p class="mb-0">{% translate "Der er ingen aktive afstemninger i øjeblikket" %}</p>
+  </div>
+</div>
+{% endblock %}

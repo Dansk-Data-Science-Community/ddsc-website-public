@@ -1,0 +1,11 @@
+@media (prefers-color-scheme: dark) {
+    .background-color {
+        background: #0D1116;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .background-color {
+        background: white;
+    }
+}

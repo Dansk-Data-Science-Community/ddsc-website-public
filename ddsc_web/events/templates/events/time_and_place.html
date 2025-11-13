@@ -1,0 +1,9 @@
+
+{% load i18n %}
+
+<h5 class="title text-left">{% translate "Tid og sted" %}</h5>
+<p class="text-left font-weight-bold my-0 pt-0">{{ event.location }}</p>
+<p class="text-left font-weight-bold my-0 pt-0">{{ event.address.postal_code }}, {{ event.address.city }}</p>
+<p class="text-left font-weight-bold my-0 pt-0">{{ event.address.address }}</p>
+<p class="text-left my-0 pt-0">{% translate "Den" %} {{ event.start_datetime | date:'d-m-Y' }}</p>
+<p class="text-left my-0 pt-0">{% translate "Kl." %} {{ event.start_datetime | date:'H:i' }} - {{ event.end_datetime | date:'H:i' }}</p>

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{% include "stats/line_chart.html" with labels=user_stats.labels data=user_stats.data element_id="users_chart" label="total" stepsize=user_stats.stepsize%}
+{% include "stats/line_chart.html" with labels=member_stats.labels data=member_stats.data element_id="members_chart" label="total" stepsize=member_stats.stepsize%}
+{% include "stats/line_chart.html" with labels=event_stats.labels data=event_stats.data element_id="events_chart" label="total" stepsize=event_stats.stepsize%}
+{% endblock scripts %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 pb-5 mx-auto">
+        <h4 class="text-center">User signups</h4>
+        <div class="embed-responsive embed-responsive-16by9">
+          <canvas class="embed-responsive-item" id="users_chart"></canvas>
+        </div>
+        <h4 class="text-center">Member signups</h4>
+        <div class="embed-responsive embed-responsive-16by9">
+          <canvas class="embed-responsive-item" id="members_chart"></canvas>
+        </div>
+        <h4 class="text-center">Event registrations</h4>
+        <div class="embed-responsive embed-responsive-16by9">
+          <canvas class="embed-responsive-item" id="events_chart"></canvas>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock content %}

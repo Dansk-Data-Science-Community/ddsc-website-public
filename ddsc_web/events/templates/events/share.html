@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load tz %}
+{% load crispy_forms_tags %}
+{% load thumbnail %}
+{% load cropping %}
+{% load i18n %}
+
+{% block title %}{% translate "Events" %}{% endblock  %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static "css/button.css" %}">
+<link rel="stylesheet" href="{% static "css/links.css" %}">
+<link rel="stylesheet" href="{% static "events/events.css" %}">
+
+<div id="content" class="container">
+    <h1 class="title py-3 text-center">{{ event.title }}</h1>
+</div>
+<div class="container pb-5">
+    <div class="col-lg-7 mx-auto">
+        <div class="card mb-5 bg-light">
+            <div class="card-body mb-2">
+                {% include "events/detail.html" with event=event %}
+            </div>
+        </div>
+    </div>
+    <div class="container mb-3">
+    </div>
+</div>
+
+{% endblock content %}

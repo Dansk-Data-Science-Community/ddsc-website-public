@@ -1,0 +1,104 @@
+/* Made with love by Mutiullah Samim*/
+
+html,body{
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+#div_id_username{
+width: 100%;
+}
+#div_id_password{
+width: 100%;
+}
+#div_id_password2{
+width: 100%;
+}
+#div_id_new_password1{
+width: 100%;
+}
+#div_id_new_password2{
+width: 100%;
+}
+#div_id_email{
+width: 100%;
+}
+#div_id_old_password{
+width: 100%;
+}
+    
+
+.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: rgb(169, 31, 31);
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.links a{
+margin-left: 4px;
+color: rgb(171, 54, 54);
+}
+
+.link-text{
+    color: rgb(171, 54, 54);
+}
+
+.links a:hover{
+    color: rgb(169, 31, 31);
+}
+
+.ddsc_icon a{
+    font-size: 60px;
+    margin-left: 10px;
+    color: #0c0901;
+}
+
+.ddsc_icon a:hover{
+    color: rgb(199, 174, 174);
+    cursor: pointer;
+    filter: brightness(90%) sepia(10%);
+}
+
+.ddsc_icon{
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}

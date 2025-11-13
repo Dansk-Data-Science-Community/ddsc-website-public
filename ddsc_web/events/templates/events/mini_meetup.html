@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate "Mini Meetup" %}{% endblock  %}
+
+{% block content%}
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+<link rel="stylesheet" href="{% static "css/projects.css" %}">
+<link rel="stylesheet" href="{% static "events/events.css" %}">
+
+        <header class="py-5 top-header-meetup">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src={% static 'ddsc-logo-base.svg' %} width="150" height="150"/>
+                <h1 class="text-white fs-3 fw-bolder">{% translate "Mini Meetup" %}</h1>
+                <p class="text-white-50 mb-0">{% translate "Mød communitiet i et hyggeligt og uformelt miljø!" %}</p>
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="home-text col-lg-6">
+                        <h2>{% translate "Hyggeligt og uformelt" %}</h2>
+                        <p class="lead">{% translate "Har du lyst til at møde det danske data science community et hyggeligt og uformelt sted? Lyst til at mødes med andre ligesindede data scientists i Danmark?" %}</p>
+                        <p class="mb-0">{% translate "Så tag med til Dansk Data Science Community Mini-meetup! Vi mødes ca. en gang om måneden for at diskutere hvad der rør sig i vores lille fællesskab. Trends, use cases, professionelle erfaringer eller det seneste AI-meme." %}</p>
+                        <hr class="mb-0 me-0" />
+                    </div>
+                </div>
+            </div>
+            <section class="projects-section bg-light" id="projects">
+                <div class="container px-4 px-lg-5">
+                    <!-- Networking-->
+                    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                        <div class="col-lg-6"><img class="img-fluid" src={% static 'event_pics_grey/minimeetup1.jpg' %} alt="..." /></div>
+                        <div class="col-lg-6">
+                            <div class="bg-dark text-center h-100">
+                                <div class="d-flex h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                                        <h4 class="text-white">{% translate "Alle er velkomne!" %}</h4>
+                                        <p class="mb-0 text-white-50">{% translate "Alt og alle er velkomne. Og husk at tage en ven og det gode humør med med. Vi ses!" %}</p>
+                                        <hr class="d-none d-lg-block mb-0 me-0" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Faglige oplæg-->
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-lg-6"><img class="img-fluid" src={% static 'event_pics_grey/minimeetup2.jpg' %} alt="..." /></div>
+                        <div class="col-lg-6 order-lg-first">
+                            <div class="bg-dark text-center h-100 project">
+                                <div class="d-flex h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-right">
+                                        <h4 class="text-white">{% translate "Tid og sted" %}</h4>
+                                        <p class="mb-0 text-white-50">{% translate "Meetups er typisk torsdage eller fredage, det er typisk mellem 16:30 og 18:30 og announceres typisk 2-3 uger i forvejen inde på Slack kanalen." %}</p>
+                                        <hr class="d-none d-lg-block mb-0 me-0" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+{% endblock %}

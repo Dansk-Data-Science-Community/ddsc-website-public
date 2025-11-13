@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load thumbnail %}
+{% load i18n %}
+
+
+{% block title %}{% translate "Rediger profil" %}{% endblock  %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/button.css" %}">
+<link rel="stylesheet" href="{% static "css/header_navbar.css" %}">
+
+<div id="content" class="container mb-3 mt-3 pb-2">
+    <h1 class="title py-3 text-center">{% translate "Min profil" %}</h1>
+</div>
+
+<div class="container">
+  <div class="col-lg-7 pb-5 mx-auto">
+    <div class="card mb-5 bg-light">
+      <div class="card-body mb-2">
+        <div class="container pl-0">
+          <strong>{% translate "Rediger oplysninger på din profil" %}</strong>
+          <a class="btn btn-secondary text-white-50 float-right" role="button" href="{% url "users:password_change" %}">{% translate "Skift adgangskode" %}</a>
+        </div>
+        <div class="justify-content-end">
+        {% if request.user.profile.has_image %}
+          <a href="#" role="button" data-toggle="modal" data-target=".imagemodal">
+            <img class="rounded-circle my-2" src="{{request.user.profile.image.image|thumbnail_url:'edit_profile' }}"></img>
+          </a>
+        {% else %}
+          <a class="red-link" href="#" role="button" data-toggle="modal" data-target=".imagemodal">
+            <i class="far fa-user-circle fa-6x my-2"></i>
+          </a>
+        {% endif %}
+        </div>
+          {% include "users/image_modal.html" %}
+          <form action="{{ request.path }}" method="post" class="uniForm" enctype="multipart/form-data">
+              {% crispy user_form %}
+              {% crispy profile_form %}
+              <a class="btn btn-secondary text-white-50 float-left mr-2" role="button" href="{% url "users:dashboard" %}">{% translate "Tilbage" %}</a>
+              <input class="btn button-color text-white-50 float-right" type="submit" value="{% translate "Gem" %}">
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

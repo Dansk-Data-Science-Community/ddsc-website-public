@@ -1,0 +1,48 @@
+{% load static %}
+{% load i18n %}
+<link rel="stylesheet" href="{% static "css/projects.css" %}">
+        <!-- Projects start-->
+<section class="projects-section bg-light" id="projects">
+    <div class="container px-4 px-lg-5">
+        <!-- Meet-up events-->
+        <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+            <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src={% static 'event_pics_grey/faglig_diskussioner_2.jpg' %} alt="..." /></div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="featured-text text-center text-lg-left">
+                    <h4>{% translate "Meet-up events" %}</h4>
+                    <p class="text-black-50 mb-0">{% translate "Vær med til at arrangere events for Data Scientists over hele landet! Savner du et fagligt fællesskab? Vi holder oplæg, inspirerer og udforsker State Of The Art teknologier." %}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Networking-->
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="col-lg-6"><img class="img-fluid" src={% static 'event_pics_grey/networking.jpg' %} alt="..." /></div>
+            <div class="col-lg-6">
+                <div class="bg-dark text-center h-100">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">{% translate "Networking" %}</h4>
+                            <p class="mb-0 text-white-50">{% translate "Vi lærer hinanden at kende og skaber netværk på tværs af Data Science communitiet. Vi deler erfaringer, problemer og løsninger i en praktisk hverdag som Data Scientist." %}</p>
+                            <hr class="d-none d-lg-block mb-0 me-0" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Faglige oplæg-->
+        <div class="row gx-0 justify-content-center">
+            <div class="col-lg-6"><img class="img-fluid" src={% static 'event_pics_grey/faglig_oplæg_1.jpg' %} alt="..." /></div>
+            <div class="col-lg-6 order-lg-first">
+                <div class="bg-dark text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-right">
+                            <h4 class="text-white">{% translate "Faglige oplæg" %}</h4>
+                            <p class="mb-0 text-white-50">{% translate "Bliv aktiv deltager gennem faglige oplæg til events. Det kunne fx være indenfor NLP, Explainable AI, Data-centric ML eller noget helt tredje..." %}</p>
+                            <hr class="d-none d-lg-block mb-0 me-0" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

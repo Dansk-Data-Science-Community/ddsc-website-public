@@ -1,0 +1,13 @@
+Danish Data Science Community - General Terms for Event Signup
+
+By signing up to attend an event through the Danish Data Science Community website (ddsc.io), you agree to the following general terms:
+
+Personal Information: When registering for an event, you will be required to provide your full name and email address. By submitting this information, you consent to ddsc.io collecting and storing your personal data for the purpose of managing your event registration.
+
+Communication: You agree to receive communication from ddsc.io related to the event you have signed up for, including but not limited to, reminders, schedule updates, and other relevant information. Your email address and full name will be used to contact you about these updates.
+
+Data Usage: Your personal data (email and full name) will be used by ddsc.io solely for the purposes mentioned above and will not be shared with third parties, including the event venue or any other companies involved in the event. Any data shared with third parties will be in aggregate form only, such as the total number of registered participants or other non-personally identifiable information.
+
+Data Protection: ddsc.io is committed to protecting your personal data and will take appropriate measures to ensure its security and confidentiality. We will not disclose your personal information to any third party without your explicit consent, unless required to do so by law or a legal obligation.
+
+By clicking "Sign Up" or completing the event registration process, you acknowledge and agree to these general terms. If you do not agree with these terms, please do not register for the event.

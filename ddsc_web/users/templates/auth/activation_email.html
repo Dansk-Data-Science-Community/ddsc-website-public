@@ -1,0 +1,8 @@
+{% load i18n %}
+
+{% translate "Velkommen til Dansk Data Science Community!" %}
+
+{% translate "Hvis det ikke er dig, der har oprettet en konto på" %} {{ domain }} {% translate "skal du blot ignorere denne mail" %}.
+
+{% translate "Før du kan gå igang med at bruge din ny-oprettede konto vil vi bede dig om at bekræfte din email adresse via nedenstående link:" %}
+{{ protocol }}://{{ domain }}{% url "users:activate" uidb64=uid token=token %}

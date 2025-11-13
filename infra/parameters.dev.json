@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environment": {
+      "value": "dev"
+    },
+    "appName": {
+      "value": "ddsc"
+    },
+    "postgresAdminUsername": {
+      "value": "django_admin"
+    },
+    "postgresAdminPassword": {
+      "value": "ChangeMe123!"
+    },
+    "djangoSecretKey": {
+      "value": "dev-secret-key-change-in-production"
+    },
+    "emailUser": {
+      "value": "your-email@gmail.com"
+    },
+    "emailPassword": {
+      "value": "your-app-password"
+    },
+    "allowedHosts": {
+      "value": "localhost,127.0.0.1"
+    },
+    "imageTag": {
+      "value": "latest"
+    }
+  }
+}

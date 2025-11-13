@@ -1,0 +1,16 @@
+{% load static %}
+{% load i18n %}
+
+<link rel="stylesheet" href="{% static "css/polls.css" %}">
+
+<form action ="{% url 'polls:submit_poll' voter_session.id %}" method ="post">
+    {% csrf_token %}
+    {% for question, form in question_forms %}
+    <div class="card mb-4 border-0">
+        <p class="text font-italic"> {{ question.text }} <p>
+        {{ form.as_p }}
+    </div>
+    {% endfor %}
+    <input type ="submit" value ="{% translate "Afgiv stemme" %}" class ="btn vote-button text-white-50 float-right" />
+</form>
+<a class ="btn btn-secondary btn-sm mb-3" href ="{% url 'polls:list_polls' %}">{% translate "Tilbage" %}</a>

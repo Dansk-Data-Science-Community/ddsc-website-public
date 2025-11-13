@@ -1,0 +1,9 @@
+{% load i18n %}
+<span class="navbar-text mr-3">
+    {% translate "Abonner på Nyhedsbrev" %}
+</span>
+<form class="form-inline my-2 my-lg-0" method="post" action="/news/success/">
+    {% csrf_token %}
+    <input type="email" class="form-control mr-sm-2" placeholder="{% translate "Indtast email" %}" name="email">
+    <button class="btn subscribe-button-color text-white-50" type="submit">{% translate "Abonner" %}</button>
+</form>

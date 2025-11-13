@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}{% translate "Bliv medlem" %}{% endblock title %}
+
+{% block content %}
+<div id="registerDone" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+  <div class="modal-dialog modal-mm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="title"><i class="fas fa-check mr-3"></i>{% translate "Indmeldelse" %}</h3>
+        <form action="{% url "users:dashboard" %}" method="get">
+          {% csrf_token %}
+          <button type="submit" class="close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </form>
+      </div>
+      <div class="modal-body">
+        <p>{% translate "Tak fordi du har meldt dig ind i Dansk Data Science Community!" %}</p>
+        <p>{% translate "Din medlemsstatus bliver aktiv når indmeldelsesblanketten er gået igennem." %}</p>
+      </div>
+      <div class="modal-footer">
+          <form action="{% url "users:dashboard" %}" method="get">
+            {% csrf_token %}
+            <input class="btn btn-default btn-secondary" type="submit" value="{% translate "Ok" %}"/>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% load i18n %}
+{% load cropping %}
+<img src={% if registration.event.images.first %}{% cropped_thumbnail registration.event.get_first_image "cropping_detail"%}{% endif %} class="img-fluid rounded" alt="...">
+<section class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h5 class="title text-left">{% translate "Resumé" %}</h5>
+                <p class="text-left">{{ registration.event.summary }}</p>
+            </div>
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+                {% include "events/time_and_place.html" with event=registration.event%}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-4 bg-light">
+    <div class="container py-5 text-center">
+        <h4 class="title">{{ registration.first_name }} {{ registration.last_name }}</h4>
+        <img src={{ registration.qr_code.url }} class="img-fluid rounded">
+    </div>
+</section>

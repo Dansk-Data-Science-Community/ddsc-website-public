@@ -1,0 +1,24 @@
+{% load i18n %}
+
+<div class="modal fade privacy" tabindex="-1" role="dialog" aria-labelledby="LargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="title">{% translate "Tilmeldingsbetingelser" %}</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bg-light">
+          {% if registration_terms.terms %}
+            {{ registration_terms.terms | safe }}
+          {% else %}
+              <p>{% translate "Der er ikke angivet nogen tilmeldingsbetingelser" %}</p>
+          {% endif %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary text-white-50" data-dismiss="modal">{% translate "Ok" %}</button>
+        </div>
+      </div>
+    </div>
+  </div>

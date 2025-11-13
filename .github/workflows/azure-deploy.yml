@@ -1,0 +1,222 @@
+name: Deploy to Azure Container Apps
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+
+env:
+  AZURE_RESOURCE_GROUP: rg-ddsc-prod
+  AZURE_LOCATION: northeurope
+  CONTAINER_REGISTRY: ddscacrprod
+
+jobs:
+  # Build and test the application
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11.9'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r dev_requirements.txt
+
+      - name: Run tests
+        run: |
+          cd ddsc_web
+          python manage.py test --settings=ddsc_web.settings.dev
+
+      - name: Run Django checks
+        run: |
+          cd ddsc_web
+          python manage.py check --settings=ddsc_web.settings.azure --deploy
+
+      - name: Check migrations
+        run: |
+          cd ddsc_web
+          python manage.py makemigrations --check --dry-run --settings=ddsc_web.settings.dev
+
+  # Build and push Docker images
+  build-images:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Azure Container Registry
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ env.CONTAINER_REGISTRY }}.azurecr.io
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+
+      - name: Extract metadata for web image
+        id: meta-web
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.CONTAINER_REGISTRY }}.azurecr.io/ddsc-web
+          tags: |
+            type=ref,event=branch
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push web image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ steps.meta-web.outputs.tags }}
+          labels: ${{ steps.meta-web.outputs.labels }}
+          cache-from: type=registry,ref=${{ env.CONTAINER_REGISTRY }}.azurecr.io/ddsc-web:buildcache
+          cache-to: type=registry,ref=${{ env.CONTAINER_REGISTRY }}.azurecr.io/ddsc-web:buildcache,mode=max
+
+      - name: Extract metadata for celery image
+        id: meta-celery
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.CONTAINER_REGISTRY }}.azurecr.io/ddsc-celery
+          tags: |
+            type=ref,event=branch
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push celery image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile.celery
+          push: true
+          tags: ${{ steps.meta-celery.outputs.tags }}
+          labels: ${{ steps.meta-celery.outputs.labels }}
+          cache-from: type=registry,ref=${{ env.CONTAINER_REGISTRY }}.azurecr.io/ddsc-celery:buildcache
+          cache-to: type=registry,ref=${{ env.CONTAINER_REGISTRY }}.azurecr.io/ddsc-celery:buildcache,mode=max
+
+  # Deploy to Azure Container Apps
+  deploy:
+    needs: build-images
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
+      url: ${{ steps.deploy.outputs.app-url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Set environment variables
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+            echo "ENVIRONMENT=prod" >> $GITHUB_ENV
+            echo "WEB_APP_NAME=ddsc-prod-web" >> $GITHUB_ENV
+            echo "CELERY_APP_NAME=ddsc-prod-celery" >> $GITHUB_ENV
+          else
+            echo "ENVIRONMENT=staging" >> $GITHUB_ENV
+            echo "WEB_APP_NAME=ddsc-staging-web" >> $GITHUB_ENV
+            echo "CELERY_APP_NAME=ddsc-staging-celery" >> $GITHUB_ENV
+          fi
+
+      - name: Update web container app
+        id: deploy
+        run: |
+          az containerapp update \
+            --name ${{ env.WEB_APP_NAME }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+            --image ${{ env.CONTAINER_REGISTRY }}.azurecr.io/ddsc-web:${{ github.sha }} \
+            --set-env-vars \
+              DJANGO_SETTINGS_MODULE=ddsc_web.settings.azure \
+              SECRET_KEY=secretref:secret-key \
+              ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} \
+              POSTGRES_HOST=${{ secrets.POSTGRES_HOST }} \
+              POSTGRES_DB=${{ secrets.POSTGRES_DB }} \
+              POSTGRES_USER=${{ secrets.POSTGRES_USER }} \
+              POSTGRES_PASSWORD=secretref:postgres-password \
+              REDIS_HOST=${{ secrets.REDIS_HOST }} \
+              REDIS_PORT=6380 \
+              REDIS_PASSWORD=secretref:redis-password \
+              REDIS_SSL=true \
+              AZURE_ACCOUNT_NAME=${{ secrets.AZURE_ACCOUNT_NAME }} \
+              AZURE_ACCOUNT_KEY=secretref:azure-storage-key \
+              EMAIL_USER=${{ secrets.EMAIL_USER }} \
+              EMAIL_PASSWORD=secretref:email-password
+          
+          # Get app URL
+          APP_URL=$(az containerapp show \
+            --name ${{ env.WEB_APP_NAME }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+            --query "properties.configuration.ingress.fqdn" -o tsv)
+          
+          echo "app-url=https://$APP_URL" >> $GITHUB_OUTPUT
+
+      - name: Update celery container app
+        run: |
+          az containerapp update \
+            --name ${{ env.CELERY_APP_NAME }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+            --image ${{ env.CONTAINER_REGISTRY }}.azurecr.io/ddsc-celery:${{ github.sha }}
+
+      - name: Run database migrations
+        run: |
+          az containerapp exec \
+            --name ${{ env.WEB_APP_NAME }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+            --command "python manage.py migrate --noinput"
+
+      - name: Collect static files
+        run: |
+          az containerapp exec \
+            --name ${{ env.WEB_APP_NAME }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+            --command "python manage.py collectstatic --noinput"
+
+      - name: Restart apps
+        run: |
+          az containerapp revision restart \
+            --name ${{ env.WEB_APP_NAME }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }}
+          
+          az containerapp revision restart \
+            --name ${{ env.CELERY_APP_NAME }} \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }}
+
+      - name: Deployment summary
+        run: |
+          echo "### Deployment Summary 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Environment:** ${{ env.ENVIRONMENT }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Resource Group:** ${{ env.AZURE_RESOURCE_GROUP }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Web App:** ${{ env.WEB_APP_NAME }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Celery App:** ${{ env.CELERY_APP_NAME }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Image Tag:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Application URL:** ${{ steps.deploy.outputs.app-url }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Deployment completed successfully!" >> $GITHUB_STEP_SUMMARY

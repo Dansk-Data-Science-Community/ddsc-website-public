@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate "Afstemningsresultat" %}{% endblock  %}
+<link rel="stylesheet" href="{% static "css/button.css" %}">
+
+<div id="content" class="container mb-3 mt-3 pb-2">
+    <h1 class="title py-3 text-center">{% translate "Aktive afstemninger" %}</h1>
+</div>
+
+{% block content %}
+<div id="content" class="container mb-3 mt-3 pb-2">
+    <h1 class="title py-3 text-center">{{ poll.title }}</h1>
+</div>
+<div class="container">
+    <div class="col-lg-8 pb-5 mx-auto">
+        <div class="card mb-3">
+            <div class="card-header">
+                <p class="lead font-weight-bold pb-2">{{ poll.description }}</p>
+            </div>
+                {% for question, votes in  poll_results.items %}
+                    <div class="card-body mb-4 bg-light">
+                        <p class=""> {{ question.text }} </p>
+                    <table class="table table-striped table-dark">
+                        <thead>
+                            <tr>
+                              <th scope="col"></th>
+                              <th scope="col">{% translate "Afgivet stemmer" %}</th>
+                              <th scope="col">{% translate "Andel stemmer" %}</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for choice, count in votes.items %}
+                                <tr>
+                                <td>{{ choice.text }}</td>
+                                <td>{{ count.0 }}</td>
+                                <td>{{ count.1|floatformat:2 }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
