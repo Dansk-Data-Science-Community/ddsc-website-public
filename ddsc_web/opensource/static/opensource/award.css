@@ -153,18 +153,9 @@
     height: 100px;
 }
 
-.logo-ida {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #000;
-    font-family: Arial, sans-serif;
-}
-
-.logo-it {
-    display: block;
-    font-size: 1.5rem;
-    color: #1f4e78;
-    margin-top: -10px;
+.logo-ida-img {
+    width: 120px;
+    height: auto;
 }
 
 .logo-ddsa {
