@@ -1,0 +1,1 @@
+move the signup form to the bottom of the main page. don't put it in another page. Only bottom of homepage

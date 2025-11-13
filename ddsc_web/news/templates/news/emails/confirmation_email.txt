@@ -1,0 +1,27 @@
+{% load i18n %}{% translate "DANSK DATA SCIENCE COMMUNITY" %}
+{% translate "Bekræft din nyhedsbrev tilmelding" %}
+================================================================================
+
+{% translate "Hej" %} {% if subscriber.name %}{{ subscriber.name }}{% else %}{% translate "der" %}{% endif %},
+
+{% translate "Tak fordi du vil tilmelde dig DDSC's nyhedsbrev!" %}
+
+{% translate "For at bekræfte din tilmelding, skal du klikke på dette link:" %}
+
+{{ confirmation_url }}
+
+{% translate "Dine præferencer:" %}
+- {% translate "Event typer:" %} {{ subscriber.get_event_types_display }}
+- {% translate "Frekvens:" %} {{ subscriber.get_frequency_display }}
+
+{% translate "Efter bekræftelse vil du modtage opdateringer om DDSC events og aktiviteter baseret på dine præferencer." %}
+
+================================================================================
+
+{% translate "Du modtager denne email fordi nogen (forhåbentlig dig) har tilmeldt denne email til DDSC's nyhedsbrev." %}
+
+{% translate "Hvis du ikke har tilmeldt dig, kan du trygt ignorere denne email." %}
+
+{% translate "Afmeld nyhedsbrev:" %} {{ unsubscribe_url }}
+
+© {% now "Y" %} {% translate "Dansk Data Science Community" %} - CVR: 43 24 68 44

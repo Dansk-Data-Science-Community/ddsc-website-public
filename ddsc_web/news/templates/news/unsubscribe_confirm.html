@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate "Afmeld Nyhedsbrev - DDSC" %}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/success.css" %}">
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card p-5 text-center">
+                <div style="border-radius:100px; height:100px; width:100px; background: #FFF3CD; margin:0 auto 20px;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 50px; line-height: 100px; color: #856404;"></i>
+                </div>
+
+                <h2>{% translate "Afmeld Nyhedsbrev?" %}</h2>
+                <p class="lead">{% translate "Er du sikker på, at du vil afmelde dig?" %}</p>
+
+                <div class="alert alert-info text-start mt-4">
+                    {% translate "Email:" %} <strong>{{ subscriber.email }}</strong>
+                </div>
+
+                <p class="text-muted">
+                    {% translate "Du vil ikke længere modtage opdateringer om DDSC events og aktiviteter." %}
+                </p>
+
+                <form method="post" class="mt-4">
+                    {% csrf_token %}
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-danger btn-lg">
+                            {% translate "Ja, afmeld mig" %}
+                        </button>
+                        <a href="/" class="btn btn-outline-secondary">
+                            {% translate "Annuller" %}
+                        </a>
+                    </div>
+                </form>
+
+                <p class="text-muted mt-4 small">
+                    {% translate "Vil du i stedet ændre dine præferencer?" %}
+                    <a href="{% url 'news:update_preferences' %}?token={{ subscriber.confirmation_token }}">
+                        {% translate "Administrer præferencer" %}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

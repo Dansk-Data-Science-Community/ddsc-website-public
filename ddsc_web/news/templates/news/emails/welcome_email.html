@@ -1,0 +1,150 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% translate "Velkommen til DDSC Nyhedsbrev" %}</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #A91F1F;
+        }
+        h1 {
+            color: #A91F1F;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .content {
+            padding: 30px 0;
+        }
+        .welcome-box {
+            background: linear-gradient(135deg, #A91F1F 0%, #8A1919 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .welcome-box h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .info-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .info-section h3 {
+            color: #A91F1F;
+            margin-top: 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #A91F1F;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px 5px;
+        }
+        .button:hover {
+            background-color: #8A1919;
+        }
+        .social-links {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #A91F1F;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+            color: #666;
+        }
+        .footer a {
+            color: #A91F1F;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{% translate "Dansk Data Science Community" %}</h1>
+        </div>
+
+        <div class="welcome-box">
+            <h2>🎉 {% translate "Velkommen!" %} 🎉</h2>
+        </div>
+
+        <div class="content">
+            <p>{% translate "Hej" %} {% if subscriber.name %}{{ subscriber.name }}{% else %}{% translate "der" %}{% endif %},</p>
+
+            <p><strong>{% translate "Din email er nu bekræftet, og du er tilmeldt DDSC's nyhedsbrev!" %}</strong></p>
+
+            <p>{% translate "Vi er glade for at have dig med i vores community. Du vil nu modtage opdateringer om spændende events, meetups, workshops og andre aktiviteter inden for Data Science i Danmark." %}</p>
+
+            <div class="info-section">
+                <h3>{% translate "Hvad kan du forvente?" %}</h3>
+                <ul>
+                    <li>{% translate "Information om kommende events og meetups" %}</li>
+                    <li>{% translate "Workshops og læringsmuligheder" %}</li>
+                    <li>{% translate "Netværksmuligheder med andre data scientists" %}</li>
+                    <li>{% translate "Opdateringer om community projekter" %}</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>{% translate "Kom i gang:" %}</h3>
+                <div style="text-align: center;">
+                    <a href="https://ddsc.io/events" class="button">{% translate "Se kommende events" %}</a>
+                    <a href="{{ preferences_url }}" class="button" style="background-color: #6c757d;">{% translate "Ændre præferencer" %}</a>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <p><strong>{% translate "Følg os på sociale medier:" %}</strong></p>
+                <a href="https://www.linkedin.com/groups/9017904/" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/Dansk-Data-Science-Community" target="_blank">GitHub</a> |
+                <a href="https://www.youtube.com/channel/UCVvX7zx417y_VKcCzln3y7Q" target="_blank">YouTube</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>{% translate "Dine præferencer:" %} {{ subscriber.get_event_types_display }} - {{ subscriber.get_frequency_display }}</p>
+            <p>
+                <a href="{{ preferences_url }}">{% translate "Opdater præferencer" %}</a> |
+                <a href="{{ unsubscribe_url }}">{% translate "Afmeld nyhedsbrev" %}</a>
+            </p>
+            <p>&copy; {% now "Y" %} {% translate "Dansk Data Science Community" %} - CVR: 43 24 68 44</p>
+        </div>
+    </div>
+</body>
+</html>

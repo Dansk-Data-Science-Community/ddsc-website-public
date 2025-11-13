@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% translate "Nyhedsbrev Præferencer - DDSC" %}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/success.css" %}">
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card p-4">
+                <h2 class="text-center mb-4">{% translate "Nyhedsbrev Præferencer" %}</h2>
+
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i>
+                    {% translate "Email:" %} <strong>{{ subscriber.email }}</strong>
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg" style="background-color: #A91F1F; border-color: #A91F1F;">
+                            {% translate "Gem Ændringer" %}
+                        </button>
+                    </div>
+                </form>
+
+                <hr class="my-4">
+
+                <div class="text-center">
+                    <p class="text-muted">{% translate "Vil du helt afmelde dig nyhedsbrevet?" %}</p>
+                    <a href="{% url 'news:unsubscribe_token' token=subscriber.confirmation_token %}"
+                       class="btn btn-outline-danger">
+                        {% translate "Afmeld Nyhedsbrev" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% load i18n %}{% translate "DANSK DATA SCIENCE COMMUNITY" %}
+{% translate "Velkommen til DDSC Nyhedsbrev!" %}
+================================================================================
+
+{% translate "Hej" %} {% if subscriber.name %}{{ subscriber.name }}{% else %}{% translate "der" %}{% endif %},
+
+🎉 {% translate "Din email er nu bekræftet, og du er tilmeldt DDSC's nyhedsbrev!" %} 🎉
+
+{% translate "Vi er glade for at have dig med i vores community. Du vil nu modtage opdateringer om spændende events, meetups, workshops og andre aktiviteter inden for Data Science i Danmark." %}
+
+{% translate "Hvad kan du forvente?" %}
+- {% translate "Information om kommende events og meetups" %}
+- {% translate "Workshops og læringsmuligheder" %}
+- {% translate "Netværksmuligheder med andre data scientists" %}
+- {% translate "Opdateringer om community projekter" %}
+
+{% translate "Kom i gang:" %}
+- {% translate "Se kommende events:" %} https://ddsc.io/events
+- {% translate "Ændre præferencer:" %} {{ preferences_url }}
+
+{% translate "Følg os på sociale medier:" %}
+- LinkedIn: https://www.linkedin.com/groups/9017904/
+- GitHub: https://github.com/Dansk-Data-Science-Community
+- YouTube: https://www.youtube.com/channel/UCVvX7zx417y_VKcCzln3y7Q
+
+================================================================================
+
+{% translate "Dine præferencer:" %} {{ subscriber.get_event_types_display }} - {{ subscriber.get_frequency_display }}
+
+{% translate "Opdater præferencer:" %} {{ preferences_url }}
+{% translate "Afmeld nyhedsbrev:" %} {{ unsubscribe_url }}
+
+© {% now "Y" %} {% translate "Dansk Data Science Community" %} - CVR: 43 24 68 44
