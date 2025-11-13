@@ -31,6 +31,15 @@ jobs:
       run: |
         az acr login --name ${{ env.AZURE_CONTAINER_REGISTRY }}
 
+    - name: Set image tag
+      id: set-tag
+      run: |
+        if [ "${{ github.event_name }}" = "release" ]; then
+          echo "IMAGE_TAG=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
+        else
+          echo "IMAGE_TAG=$(date +%Y%m%d-%H%M%S)-${{ github.sha }}" >> $GITHUB_OUTPUT
+        fi
+
     - name: Build and push web Docker image
       uses: docker/build-push-action@v5
       with:
@@ -38,7 +47,7 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: |
-          ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-web:${{ github.event.release.tag_name }}
+          ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-web:${{ steps.set-tag.outputs.IMAGE_TAG }}
           ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-web:latest
         cache-from: type=registry,ref=${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-web:latest
         cache-to: type=inline
@@ -50,7 +59,7 @@ jobs:
         file: ./Dockerfile.celery
         push: true
         tags: |
-          ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-celery:${{ github.event.release.tag_name }}
+          ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-celery:${{ steps.set-tag.outputs.IMAGE_TAG }}
           ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-celery:latest
         cache-from: type=registry,ref=${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-celery:latest
         cache-to: type=inline
@@ -60,7 +69,7 @@ jobs:
         az containerapp update \
           --name ${{ env.WEB_APP_NAME }} \
           --resource-group ${{ env.RESOURCE_GROUP }} \
-          --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-web:${{ github.event.release.tag_name }}
+          --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-web:${{ steps.set-tag.outputs.IMAGE_TAG }}
 
     - name: Update Celery container app (if exists)
       run: |
@@ -68,7 +77,7 @@ jobs:
           az containerapp update \
             --name ${{ env.CELERY_APP_NAME }} \
             --resource-group ${{ env.RESOURCE_GROUP }} \
-            --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-celery:${{ github.event.release.tag_name }}
+            --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/ddsc-celery:${{ steps.set-tag.outputs.IMAGE_TAG }}
           echo "Celery worker updated"
         else
           echo "Celery worker does not exist, skipping"
@@ -97,7 +106,7 @@ jobs:
           --output tsv)
         echo "🚀 Application deployed successfully!"
         echo "🌐 URL: https://$APP_URL"
-        echo "📦 Release: ${{ github.event.release.tag_name }}"
+        echo "📦 Image Tag: ${{ steps.set-tag.outputs.IMAGE_TAG }}"
 
     - name: Logout from Azure
       run: |
