@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% translate "Tilmeld Nyhedsbrev - DDSC" %}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "css/success.css" %}">
+<style>
+    .newsletter-hero {
+        background: linear-gradient(135deg, #A91F1F 0%, #6c1313 100%);
+        color: white;
+        padding: 60px 0;
+        margin-bottom: 40px;
+    }
+    .newsletter-form {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin-top: -80px;
+    }
+    .feature-box {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border-left: 4px solid #A91F1F;
+    }
+    .feature-icon {
+        font-size: 2.5rem;
+        color: #A91F1F;
+        margin-bottom: 15px;
+    }
+</style>
+
+<div class="newsletter-hero">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">{% translate "Hold dig opdateret med DDSC" %}</h1>
+        <p class="lead">{% translate "Få de nyeste opdateringer om events, workshops og aktiviteter direkte i din indbakke" %}</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="newsletter-form">
+                <h2 class="text-center mb-4">{% translate "Tilmeld dig vores nyhedsbrev" %}</h2>
+
+                <form method="post" action="{% url 'news:newsletter_landing' %}">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-lg" style="background-color: #A91F1F; color: white;">
+                            {% translate "Tilmeld Nyhedsbrev" %}
+                        </button>
+                    </div>
+                </form>
+
+                <p class="text-muted text-center mt-3" style="font-size: 0.9rem;">
+                    {% translate "Vi respekterer din privatliv. Du kan afmelde dig når som helst." %}
+                </p>
+            </div>
+
+            <div class="mt-5">
+                <h3 class="mb-4">{% translate "Hvad får du?" %}</h3>
+
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h5>{% translate "Event Opdateringer" %}</h5>
+                    <p>{% translate "Vær den første til at høre om kommende meetups, workshops og konferencer i det danske Data Science miljø." %}</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h5>{% translate "Læringsmuligheder" %}</h5>
+                    <p>{% translate "Få information om workshops, tutorials og uddannelsesmuligheder inden for Data Science og AI." %}</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h5>{% translate "Community Nyheder" %}</h5>
+                    <p>{% translate "Hold dig opdateret med hvad der sker i communityet, nye projekter og samarbejdsmuligheder." %}</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-cog"></i></div>
+                    <h5>{% translate "Tilpassede Præferencer" %}</h5>
+                    <p>{% translate "Vælg selv hvilke typer events du vil høre om og hvor ofte du vil modtage opdateringer." %}</p>
+                </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+                <strong><i class="fas fa-info-circle"></i> {% translate "Bemærk:" %}</strong>
+                {% translate "Efter tilmelding vil du modtage en bekræftelsesmail. Husk at tjekke din spam-mappe hvis du ikke ser den inden for få minutter." %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

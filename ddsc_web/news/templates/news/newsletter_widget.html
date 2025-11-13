@@ -1,0 +1,57 @@
+{% load i18n %}
+<div class="newsletter-widget py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <h5 class="text-white mb-0">{% translate "Tilmeld Nyhedsbrev" %}</h5>
+                <p class="text-white-50 mb-0 small">{% translate "Hold dig opdateret med DDSC" %}</p>
+            </div>
+            <div class="col-md-8">
+                <form method="post" action="{% url 'news:subscribe_widget' %}" class="newsletter-widget-form">
+                    {% csrf_token %}
+                    <div class="row g-2">
+                        <div class="col-sm-5">
+                            <input type="text"
+                                   class="form-control"
+                                   name="name"
+                                   placeholder="{% translate "Navn (valgfrit)" %}"
+                                   aria-label="Name">
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="email"
+                                   class="form-control"
+                                   name="email"
+                                   placeholder="{% translate "Email" %}"
+                                   required
+                                   aria-label="Email">
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="submit" class="btn btn-light w-100">
+                                {% translate "Tilmeld" %}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-text text-white-50 mt-2 small">
+                        {% translate "Mere præferencer?" %}
+                        <a href="{% url 'news:newsletter_landing' %}" class="text-white">{% translate "Gå til nyhedsbrev side" %}</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .newsletter-widget {
+        background: linear-gradient(135deg, #A91F1F 0%, #6c1313 100%);
+    }
+    .newsletter-widget-form .form-control {
+        border-radius: 4px;
+    }
+    .newsletter-widget-form .btn-light {
+        font-weight: 600;
+    }
+    .newsletter-widget-form .btn-light:hover {
+        background-color: #f8f9fa;
+    }
+</style>
