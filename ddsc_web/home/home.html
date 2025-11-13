@@ -43,5 +43,14 @@
                 </div>
             </div>
         </section>
+        <section class="py-5 bg-light">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        {% include "news/includes/newsletter_cta.html" with form=newsletter_form only %}
+                    </div>
+                </div>
+            </div>
+        </section>
     {% include "projects.html" %}
 {% endblock  %}
