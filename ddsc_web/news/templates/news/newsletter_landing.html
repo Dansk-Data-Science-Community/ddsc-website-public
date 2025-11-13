@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Newsletter" %}{% endblock %}
+
+{% block content %}
+<section class="py-5 bg-dark text-white text-center">
+    <div class="container my-5">
+        <h1 class="fw-bold">{% translate "Never miss a DDSC update" %}</h1>
+        <p class="lead text-white-50 mb-0">{% translate "News, events and open-source opportunities in your inbox." %}</p>
+    </div>
+</section>
+<section class="py-5">
+    <div class="container">
+        {% include "news/includes/newsletter_cta.html" with form=form only %}
+    </div>
+</section>
+{% endblock %}
