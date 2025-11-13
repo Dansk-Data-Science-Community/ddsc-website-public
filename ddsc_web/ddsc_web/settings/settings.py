@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "polls.apps.PollsConfig",
     "stats.apps.StatsConfig",
     "pages.apps.PagesConfig",
+    "oss.apps.OssConfig",
     "reminders.apps.RemindersConfig",
     "easy_thumbnails",
     "image_cropping",
