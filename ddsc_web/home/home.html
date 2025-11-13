@@ -6,13 +6,7 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static "css/home.css" %}">
-        <header class="py-5 top-header-home">
-            <div class="text-center my-5">
-                <img class="img-fluid rounded-circle mb-4" src={% static 'ddsc-logo-base.svg' %} width="150" height="150"/>
-                <h1 class="text-white fs-3 fw-bolder">{% translate "Dansk Data Science Community" %}</h1>
-                <p class="text-white-50 mb-0">{% translate "Et fællesskab for Data Scientists" %}</p>
-            </div>
-        </header>
+        {% include "home/partials/hero.html" %}
         <!-- Content section-->
         <section class="py-5">
             <div class="container my-5">
@@ -31,6 +25,7 @@
             <div style="height: 20rem"></div>
         </div>
         <!-- Content section-->
+<<<<<<< Updated upstream
         <section class="py-5">
             <div class="container my-5">
                 <div class="row justify-content-center">
@@ -39,9 +34,21 @@
                         <p class="lead">{% translate "Vi arbejder for at styrke dansk Open-Source kultur gennem organisering af åbne projekter." %}</p>
                         <p class="mb-0">{% translate "Vi mener et styrket open-source miljø vil gavne alle gennem øget samarbejde mellem virksomheder og organisationer." %}</p>
                         <hr class="mb-0 me-0" />
+=======
+        {% include "home/partials/open_source_highlight.html" %}
+        <section class="py-5 bg-light">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        {% include "news/includes/newsletter_cta.html" with form=newsletter_form only %}
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
         </section>
+<<<<<<< Updated upstream
+=======
+        {% include "home/partials/event_preview.html" %}
+>>>>>>> Stashed changes
     {% include "projects.html" %}
 {% endblock  %}
