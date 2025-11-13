@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}{{ project.name }} - DDSC{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>{{ project.name }}</h1>
+            <p class="text-muted">
+                <span class="badge badge-secondary">⭐ {{ project.github_stars }} stars</span>
+                {% for lang in project.languages|split:"," %}
+                <span class="badge badge-info">{{ lang|strip }}</span>
+                {% endfor %}
+            </p>
+            <hr>
+            <p>{{ project.description }}</p>
+            <a href="{{ project.github_url }}" class="btn btn-primary btn-lg" target="_blank">
+                View on GitHub
+            </a>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Project Info</h5>
+                    <p><strong>Repository:</strong><br><code>{{ project.github_owner_repo }}</code></p>
+                    <p><strong>Languages:</strong><br>{{ project.languages }}</p>
+                    <p><strong>GitHub Stars:</strong><br>{{ project.github_stars }}</p>
+                    <p><small class="text-muted">Added {{ project.created_at|date:"SHORT_DATE_FORMAT" }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
