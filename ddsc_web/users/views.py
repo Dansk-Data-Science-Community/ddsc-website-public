@@ -160,6 +160,7 @@ def dashboard(request):
     registrations = request.user.event_registrations.filter(
         event__end_datetime__gt=timezone.now()
     )
+    profile_completion = request.user.get_profile_completion_percentage()
     return render(
         request,
         "users/dashboard.html",
@@ -168,6 +169,7 @@ def dashboard(request):
             "user": request.user,
             "registrations": registrations,
             "footer_class": "fixed-bottom",
+            "profile_completion": profile_completion,
         },
     )
 
@@ -226,6 +228,28 @@ def edit_image(request):
                 "image_form": image_form,
             },
         )
+
+
+@login_required
+def delete_image(request):
+    user = request.user
+    if request.method == "POST":
+        try:
+            profile_image = user.profile.image
+            # Delete the image file if it exists
+            if profile_image.image:
+                profile_image.image.delete(save=False)
+            # Clear the image field and cropping fields (use empty strings for CharField-based fields)
+            profile_image.image = None
+            profile_image.cropping_detail = ""
+            profile_image.cropping_list = ""
+            profile_image.cropping_member = ""
+            profile_image.save()
+            messages.success(request, _("Your profile image has been deleted"))
+        except Exception as e:
+            messages.error(request, _("Error deleting profile image"))
+        return HttpResponseRedirect(reverse("users:edit"))
+    return HttpResponseRedirect(reverse("users:edit"))
 
 
 def user_logout(request):

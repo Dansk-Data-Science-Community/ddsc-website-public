@@ -8,25 +8,60 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="title">{% translate "Skift billede" %}</h3>
+          <h3 class="title">{% translate "Change image" %}</h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            {% if request.user.profile.has_image %}
-                <img class="img-fluid mx-auto d-block my-2" src="{% thumbnail image_form.image.value 430x360 %}">
-            {% else %}
-                <i class="far fa-user-circle fa-6x my-2"></i>
-            {% endif %}
-            <form action="{% url "users:edit_image" %}" method="post" class="uniForm" enctype="multipart/form-data">
-                {% crispy image_form %}
-        </div>
-                <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary text-white-50 float-left" data-dismiss="modal">{% translate "Tilbage" %}</button>
-                        <input class="btn button-color text-white-50 float-right" type="submit" value="{% translate "Gem" %}">
+            <div class="text-center mb-4">
+                <div id="imagePreview" class="mb-3" style="display: inline-block;">
+                    {% if request.user.profile.has_image %}
+                        <img id="previewImg" class="img-fluid rounded mx-auto d-block" style="max-height: 400px; max-width: 100%; object-fit: contain; display: block;" src="{% thumbnail image_form.image.value 430x360 %}">
+                    {% else %}
+                        <img id="previewImg" class="img-fluid rounded mx-auto d-block" style="max-height: 400px; max-width: 100%; object-fit: contain; display: none;" src="">
+                    {% endif %}
+                </div>
+            </div>
+            <form action="{% url "users:edit_image" %}" method="post" class="uniForm" enctype="multipart/form-data" id="imageUploadForm">
+                {% csrf_token %}
+                <div class="custom-file-upload mb-3">
+                    <label for="id_image" class="btn button-color text-white w-100" style="cursor: pointer; padding: 12px;">
+                        <i class="fas fa-cloud-upload-alt mr-2"></i>{% translate "Select image" %}
+                    </label>
+                    <input type="file" name="image" accept="image/*" id="id_image" class="d-none" onchange="previewImage(this)">
+                    <small class="form-text text-muted text-center d-block mt-2">{% translate "PNG, JPG or GIF. Maximum size: 5MB" %}</small>
                 </div>
             </form>
+        </div>
+        <div class="modal-footer">
+            {% if request.user.profile.has_image %}
+            <form action="{% url "users:delete_image" %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger text-white" onclick="return confirm('{% translate "Are you sure you want to delete your profile image?" %}')">
+                    <i class="fas fa-trash-alt mr-2"></i>{% translate "Delete image" %}
+                </button>
+            </form>
+            {% endif %}
+            <button type="button" class="btn btn-secondary text-white" data-dismiss="modal">{% translate "Back" %}</button>
+            <button type="submit" form="imageUploadForm" class="btn button-color text-white">{% translate "Save" %}</button>
+        </div>
+            <script>
+                function previewImage(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            var img = document.getElementById('previewImg');
+                            
+                            if (img) {
+                                img.src = e.target.result;
+                                img.style.display = 'block';
+                            }
+                        };
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+            </script>
       </div>
     </div>
 </div>

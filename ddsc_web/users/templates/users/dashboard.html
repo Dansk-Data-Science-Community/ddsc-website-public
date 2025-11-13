@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load thumbnail %}
 {% load i18n %}
 
 {% block title %}{% translate "Dashboard" %}{% endblock %}
@@ -11,72 +12,124 @@
 
 <div id="content" class="container mb-5 mt-3 pb-2">
   <center class="container">
-    <h1 class="title py-3">{% translate "Min profil" %}</h1>
+    <h1 class="title py-3">{% translate "My Profile" %}</h1>
   <center>
 </div>
 
 <div class="container">
     <div class="row align-items-start">
         <div class="col-md-6 mb-5">
-            <div class="card border border-secondary">
-            <div class="card-header pb-0 bg-dark">
-                <h5 class="card-title text-white">{{user.get_full_name}}</h5>
+            <div class="card border border-secondary shadow-sm">
+            <div class="card-header bg-dark" style="height: 90px; display: flex; align-items: center; padding: 1rem;">
+                <div class="d-flex align-items-center w-100">
+                    <div class="mr-3">
+                        {% if user.profile.has_image %}
+                            <img class="rounded-circle" style="width: 60px; height: 60px; object-fit: cover; border: 2px solid rgba(255,255,255,0.3);" src="{{user.profile.image.image|thumbnail_url:'edit_profile' }}"></img>
+                        {% else %}
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background-color: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3);">
+                                <i class="far fa-user-circle text-white" style="font-size: 40px;"></i>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <h5 class="card-title text-white mb-0">{{user.get_full_name}}</h5>
+                </div>
             </div>
-                <div class="card-body bg-light">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <div class="short-div"><strong>{% translate "Email" %}</strong></div>
-                            <div class="short-div"><strong>{% translate "Fødselsdato" %}</strong></div>
+                <div class="card-body bg-light p-4">
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center mb-3 pb-2 border-bottom">
+                            <div class="mr-3" style="width: 40px; height: 40px; background-color: rgb(169, 31, 31); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="text-muted small mb-1">{% translate "Email" %}</div>
+                                <div class="font-weight-medium">{{user.email|default_if_none:"—"}}</div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <div class="short-div">{{user.email|default_if_none:""}}</div>
-                            <div class="short-div">{{user.profile.birthdate|default_if_none:""}}</div>
+                        <div class="d-flex align-items-center">
+                            <div class="mr-3" style="width: 40px; height: 40px; background-color: rgb(169, 31, 31); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-calendar-alt text-white"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="text-muted small mb-1">{% translate "Birthdate" %}</div>
+                                <div class="font-weight-medium">{% if user.profile.birthdate %}{{user.profile.birthdate|date:"d-m-Y"}}{% else %}—{% endif %}</div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <a class="btn button-color text-white-50 float-right" href="{% url "users:edit" %}">{% translate "Rediger" %}</a>
+                    </div>
+                    {% if profile_completion < 100 %}
+                    <div class="mb-4 pt-3 border-top">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="font-weight-bold small">{% translate "Profile completion" %}: {{ profile_completion }}%</span>
                         </div>
+                        <div class="progress" style="height: 20px;">
+                            <div class="progress-bar" 
+                                 role="progressbar" 
+                                 style="width: {{ profile_completion }}%; background-color: rgb(169, 31, 31);" 
+                                 aria-valuenow="{{ profile_completion }}" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100">
+                                {{ profile_completion }}%
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="d-flex justify-content-between mt-4 pt-3 border-top">
+                        <a class="btn button-color text-white" style="min-width: 240px;" href="{% url "users:password_change" %}">
+                            <i class="fas fa-key mr-2"></i>{% translate "Change password" %}
+                        </a>
+                        <a class="btn button-color text-white" style="min-width: 240px;" href="{% url "users:edit" %}">
+                            <i class="fas fa-edit mr-2"></i>{% translate "Edit" %}
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-6 mb-5">
             <div class="card border border-secondary">
-            <div class="card-header pb-0 bg-dark">
-                <h5 class="card-title text-white text-center">{% translate "Tilmeldte events" %}</h5>
+            <div class="card-header bg-dark" style="height: 90px; display: flex; align-items: center; padding: 1rem;">
+                <h5 class="card-title text-white text-center mb-0 w-100">{% translate "Registered events" %}</h5>
             </div>
                 <div class="card-body bg-light">
+                    {% if registrations %}
                     <div class="list-group">
                         {% for registration in registrations %}
                             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
                                 <a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target=".{{ registration.slug }}">
                                     <i class="fas fa-heading"></i> {{ registration.event.title }} - <i class="far fa-calendar-alt"></i> {{ registration.event.start_datetime | date:'d-m-Y' }} - <i class="fas fa-map-marker-alt"></i> {{ registration.event.location }}
                                 </a>
-                                <a class="btn button-color text-white-50 ml-md-2" href="{% url 'events:unregister' slug=registration.slug id=registration.id %}">
-                                    {% translate 'Afmeld' %}
+                                <a class="btn button-color text-white ml-md-2" href="{% url 'events:unregister' slug=registration.slug id=registration.id %}">
+                                    {% translate 'Unregister' %}
                                 </a>
                                 {% include 'events/event_ticket.html' with registration=registration %}
                             </div>
                         {% endfor %}
-                    </div>                    
+                    </div>
+                    {% else %}
+                    <p class="text-muted text-center mb-3">{% translate "You are not registered for any events" %}</p>
+                    {% endif %}
+                    <div class="text-center mt-3 pt-3 border-top">
+                        <a class="btn button-color text-white" style="min-width: 280px;" href="{% url 'events:event_list' %}">
+                            <i class="fas fa-calendar-plus mr-2"></i>{% translate "View upcoming events" %}
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
         {% if user.is_member %}
         <div class="col-md-6 mb-5">
             <div class="card border border-secondary">
-            <div class="card-header pb-0 bg-dark">
-                <h5 class="card-title text-white text-center">{% translate "Medlemsskab" %}</h5>
+            <div class="card-header bg-dark" style="height: 90px; display: flex; align-items: center; padding: 1rem;">
+                <h5 class="card-title text-white text-center mb-0 w-100">{% translate "Membership" %}</h5>
             </div>
                 <div class="card-body bg-light">
                     <div class="row">
-                        <div class="col"><strong>{% translate "Medlemsstatus" %}</strong></div>
+                        <div class="col"><strong>{% translate "Member status" %}</strong></div>
                         <div class="col float-right">{{user.member.get_status_display }}</div>
                     </div>
                     <div class="row">
-                        <div class="col"><strong>{% translate "Medlemstitel" %}</strong></div>
+                        <div class="col"><strong>{% translate "Member title" %}</strong></div>
                         <div class="col float-right">{{user.member.get_title_display }}</div>
                     </div>
-                    <a class="btn button-color text-white-50 mt-3 float-right" href="{% url "members:edit"%}">{% translate "Rediger" %}</a>
+                    <a class="btn button-color text-white mt-3 float-right" href="{% url "members:edit"%}">{% translate "Edit" %}</a>
                 </div>
             </div>
         </div>

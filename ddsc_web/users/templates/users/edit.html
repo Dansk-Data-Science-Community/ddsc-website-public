@@ -5,42 +5,46 @@
 {% load i18n %}
 
 
-{% block title %}{% translate "Rediger profil" %}{% endblock  %}
+{% block title %}{% translate "Edit profile" %}{% endblock  %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static "css/button.css" %}">
 <link rel="stylesheet" href="{% static "css/header_navbar.css" %}">
 
 <div id="content" class="container mb-3 mt-3 pb-2">
-    <h1 class="title py-3 text-center">{% translate "Min profil" %}</h1>
+    <h1 class="title py-3 text-center">{% translate "My Profile" %}</h1>
 </div>
 
 <div class="container">
-  <div class="col-lg-7 pb-5 mx-auto">
+  <div class="col-lg-5 pb-5 mx-auto">
     <div class="card mb-5 bg-light">
       <div class="card-body mb-2">
-        <div class="container pl-0">
-          <strong>{% translate "Rediger oplysninger på din profil" %}</strong>
-          <a class="btn btn-secondary text-white-50 float-right" role="button" href="{% url "users:password_change" %}">{% translate "Skift adgangskode" %}</a>
-        </div>
-        <div class="justify-content-end">
+        <div class="mb-4">
         {% if request.user.profile.has_image %}
-          <a href="#" role="button" data-toggle="modal" data-target=".imagemodal">
-            <img class="rounded-circle my-2" src="{{request.user.profile.image.image|thumbnail_url:'edit_profile' }}"></img>
+          <a href="#" role="button" data-toggle="modal" data-target=".imagemodal" class="d-inline-block position-relative" style="text-decoration: none;">
+            <img class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover; cursor: pointer; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" src="{{request.user.profile.image.image|thumbnail_url:'edit_profile' }}"></img>
+            <div class="position-absolute" style="bottom: 0; right: 0; background-color: rgb(169, 31, 31); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.3); border: 2px solid #fff;">
+              <i class="fas fa-camera text-white" style="font-size: 14px;"></i>
+            </div>
           </a>
         {% else %}
-          <a class="red-link" href="#" role="button" data-toggle="modal" data-target=".imagemodal">
-            <i class="far fa-user-circle fa-6x my-2"></i>
+          <a href="#" role="button" data-toggle="modal" data-target=".imagemodal" class="d-inline-block position-relative" style="text-decoration: none;">
+            <div class="rounded-circle d-flex align-items-center justify-content-center position-relative" style="width: 100px; height: 100px; background-color: #f0f0f0; border: 2px dashed #ccc; cursor: pointer; transition: all 0.3s ease;">
+              <i class="far fa-user-circle" style="font-size: 60px; color: #999;"></i>
+            </div>
+            <div class="position-absolute" style="bottom: 0; right: 0; background-color: rgb(169, 31, 31); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.3); border: 2px solid #fff;">
+              <i class="fas fa-camera text-white" style="font-size: 14px;"></i>
+            </div>
           </a>
         {% endif %}
         </div>
-          {% include "users/image_modal.html" %}
-          <form action="{{ request.path }}" method="post" class="uniForm" enctype="multipart/form-data">
-              {% crispy user_form %}
-              {% crispy profile_form %}
-              <a class="btn btn-secondary text-white-50 float-left mr-2" role="button" href="{% url "users:dashboard" %}">{% translate "Tilbage" %}</a>
-              <input class="btn button-color text-white-50 float-right" type="submit" value="{% translate "Gem" %}">
-          </form>
+        {% include "users/image_modal.html" %}
+        <form action="{{ request.path }}" method="post" class="uniForm" enctype="multipart/form-data">
+          {% crispy user_form %}
+          {% crispy profile_form %}
+          <a class="btn btn-secondary text-white float-left mr-2" role="button" href="{% url "users:dashboard" %}">{% translate "Back" %}</a>
+          <input class="btn button-color text-white float-right" type="submit" value="{% translate "Save" %}">
+        </form>
       </div>
     </div>
   </div>
