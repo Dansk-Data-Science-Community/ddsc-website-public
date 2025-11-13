@@ -1,0 +1,21 @@
+{% load i18n %}
+<div style="font-family: Arial, sans-serif; color: #1f1f1f;">
+    <h2>{% translate "Velkommen til Dansk Data Science Community" %}</h2>
+    <p>
+        {% blocktrans %}Hej {{ full_name }},{% endblocktrans %}
+    </p>
+    <p>
+        {% translate "Tak for at aktivere din konto! DDSC drives af frivillige og vi er glade for at du er med." %}
+    </p>
+    <p>
+        {% translate "Hop ind i vores Slack for at hilse på fællesskabet og få de hurtigste opdateringer:" %}
+        <br/>
+        <a href="{{ slack_link }}">{{ slack_link }}</a>
+    </p>
+    <p>
+        {% translate "Vi ses til meetups, hackathons og åbne projekter!" %}
+    </p>
+    <p>
+        – DDSC Crew
+    </p>
+</div>
