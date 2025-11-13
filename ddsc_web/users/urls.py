@@ -10,6 +10,7 @@ urlpatterns = [
     path("register/", views.register, name="register"),
     path("edit/", views.edit, name="edit"),
     path("edit_image", views.edit_image, name="edit_image"),
+    path("delete_image", views.delete_image, name="delete_image"),
     path(
         "password_change_done/",
         auth_views.PasswordChangeDoneView.as_view(

@@ -5,14 +5,14 @@
 {% load i18n %}
 
 
-{% block title %}{% translate "Rediger profil" %}{% endblock  %}
+{% block title %}{% translate "Edit profile" %}{% endblock  %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static "css/button.css" %}">
 <link rel="stylesheet" href="{% static "css/header_navbar.css" %}">
 
 <div id="content" class="container mb-3 mt-3 pb-2">
-    <h1 class="title py-3 text-center">{% translate "Min profil" %}</h1>
+    <h1 class="title py-3 text-center">{% translate "My Profile" %}</h1>
 </div>
 
 <div class="container">
@@ -42,8 +42,8 @@
         <form action="{{ request.path }}" method="post" class="uniForm" enctype="multipart/form-data">
           {% crispy user_form %}
           {% crispy profile_form %}
-          <a class="btn btn-secondary text-white float-left mr-2" role="button" href="{% url "users:dashboard" %}">{% translate "Tilbage" %}</a>
-          <input class="btn button-color text-white float-right" type="submit" value="{% translate "Gem" %}">
+          <a class="btn btn-secondary text-white float-left mr-2" role="button" href="{% url "users:dashboard" %}">{% translate "Back" %}</a>
+          <input class="btn button-color text-white float-right" type="submit" value="{% translate "Save" %}">
         </form>
       </div>
     </div>

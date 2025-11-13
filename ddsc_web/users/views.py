@@ -230,6 +230,28 @@ def edit_image(request):
         )
 
 
+@login_required
+def delete_image(request):
+    user = request.user
+    if request.method == "POST":
+        try:
+            profile_image = user.profile.image
+            # Delete the image file if it exists
+            if profile_image.image:
+                profile_image.image.delete(save=False)
+            # Clear the image field and cropping fields (use empty strings for CharField-based fields)
+            profile_image.image = None
+            profile_image.cropping_detail = ""
+            profile_image.cropping_list = ""
+            profile_image.cropping_member = ""
+            profile_image.save()
+            messages.success(request, _("Your profile image has been deleted"))
+        except Exception as e:
+            messages.error(request, _("Error deleting profile image"))
+        return HttpResponseRedirect(reverse("users:edit"))
+    return HttpResponseRedirect(reverse("users:edit"))
+
+
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(settings.LOGIN_URL)
