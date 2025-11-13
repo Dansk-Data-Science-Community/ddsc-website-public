@@ -52,6 +52,18 @@ class Member(models.Model):
     )
     slug = models.SlugField(max_length=200, blank=True)
 
+    # Privacy Settings
+    is_public = models.BooleanField(default=False, help_text=_("Make profile visible in the member directory"))
+    show_email = models.BooleanField(default=False, help_text=_("Show email address on public profile"))
+    show_job_title = models.BooleanField(default=True, help_text=_("Show job title on public profile"))
+    show_address = models.BooleanField(default=False, help_text=_("Show address on public profile"))
+
+    # Searchable Attributes
+    bio = models.TextField(blank=True, null=True, help_text=_("A short biography about yourself"))
+    skills = models.CharField(max_length=500, blank=True, null=True, help_text=_("Comma-separated list of skills (e.g., Python, Django, Data Science)"))
+    linkedin_url = models.URLField(blank=True, null=True, verbose_name=_("LinkedIn Profile URL"))
+    github_url = models.URLField(blank=True, null=True, verbose_name=_("GitHub Profile URL"))
+
     def __str__(self):
         return self.user.email
 
