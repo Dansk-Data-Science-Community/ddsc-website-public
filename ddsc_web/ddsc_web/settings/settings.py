@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "stats.apps.StatsConfig",
     "pages.apps.PagesConfig",
     "oss.apps.OssConfig",
+    "waitlist.apps.WaitlistConfig",
     "reminders.apps.RemindersConfig",
     "easy_thumbnails",
     "image_cropping",

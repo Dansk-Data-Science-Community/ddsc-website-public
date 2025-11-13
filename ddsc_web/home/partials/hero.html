@@ -1,0 +1,31 @@
+{% load static i18n %}
+<header class="hero-section text-white">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <p class="badge bg-secondary text-uppercase mb-3">{% translate "Community · Open Source · Learning" %}</p>
+                <h1 class="display-4 fw-bold">{% translate "Build the future of Danish Data Science together" %}</h1>
+                <p class="lead text-white-50 mb-4">
+                    {% translate "DDSC is Denmark’s grassroots community for data scientists, ML engineers and researchers. We host meetups, ship open-source, and connect people across the country." %}
+                </p>
+                <div class="d-flex flex-column flex-md-row gap-3">
+                    <a class="btn btn-primary btn-lg" href="{% url 'events' %}">{% translate "Explore upcoming events" %}</a>
+                    <a class="btn btn-outline-light btn-lg" href="{% url 'news:newsletter_signup' %}">{% translate "Join the newsletter" %}</a>
+                </div>
+            </div>
+            <div class="col-lg-5 mt-4 mt-lg-0">
+                <div class="hero-card shadow-lg">
+                    <h5 class="text-uppercase text-secondary small mb-3">{% translate "Next community meetup" %}</h5>
+                    <p class="h4 mb-1">{% translate "DDSC Monthly Gathering" %}</p>
+                    <p class="text-white-50 mb-3">{% translate "Copenhagen · Hybrid participation" %}</p>
+                    <ul class="hero-meta list-unstyled">
+                        <li><strong>{% translate "Speakers" %}:</strong> {% translate "Industry leaders + community lightning talks" %}</li>
+                        <li><strong>{% translate "Focus" %}:</strong> {% translate "AI safety, open-source ops, grassroots funding" %}</li>
+                        <li><strong>{% translate "Capacity" %}:</strong> {% translate "80 seats · waiting list opens Monday" %}</li>
+                    </ul>
+                    <a class="btn btn-light w-100 mt-3" href="{% url 'events' %}">{% translate "Reserve your spot" %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
