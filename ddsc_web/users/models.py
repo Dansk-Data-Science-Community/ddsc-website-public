@@ -68,6 +68,31 @@ class User(AbstractBaseUser, PermissionsMixin):
         """Send an email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
 
+    def get_profile_completion_percentage(self):
+        """
+        Calculate profile completion percentage based on key fields.
+        Returns an integer between 0 and 100.
+        """
+        completion = 0
+        
+        # First name: 25%
+        if self.first_name and self.first_name.strip():
+            completion += 25
+        
+        # Last name: 25%
+        if self.last_name and self.last_name.strip():
+            completion += 25
+        
+        # Birthdate: 25%
+        if hasattr(self, 'profile') and self.profile.birthdate:
+            completion += 25
+        
+        # Profile image: 25%
+        if hasattr(self, 'profile') and self.profile.has_image:
+            completion += 25
+        
+        return completion
+
     class Meta:
         ordering = ["id"]
         verbose_name = _("user")

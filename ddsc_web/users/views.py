@@ -160,6 +160,7 @@ def dashboard(request):
     registrations = request.user.event_registrations.filter(
         event__end_datetime__gt=timezone.now()
     )
+    profile_completion = request.user.get_profile_completion_percentage()
     return render(
         request,
         "users/dashboard.html",
@@ -168,6 +169,7 @@ def dashboard(request):
             "user": request.user,
             "registrations": registrations,
             "footer_class": "fixed-bottom",
+            "profile_completion": profile_completion,
         },
     )
 

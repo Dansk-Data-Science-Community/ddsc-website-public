@@ -14,19 +14,59 @@
           </button>
         </div>
         <div class="modal-body">
-            {% if request.user.profile.has_image %}
-                <img class="img-fluid mx-auto d-block my-2" src="{% thumbnail image_form.image.value 430x360 %}">
-            {% else %}
-                <i class="far fa-user-circle fa-6x my-2"></i>
-            {% endif %}
-            <form action="{% url "users:edit_image" %}" method="post" class="uniForm" enctype="multipart/form-data">
-                {% crispy image_form %}
+            <div class="text-center mb-4">
+                <div id="imagePreview" class="mb-3">
+                    {% if request.user.profile.has_image %}
+                        <img id="previewImg" class="img-fluid rounded mx-auto d-block" style="max-height: 300px; object-fit: contain;" src="{% thumbnail image_form.image.value 430x360 %}">
+                    {% else %}
+                        <div id="previewPlaceholder" class="d-flex align-items-center justify-content-center" style="height: 200px; background-color: #f0f0f0; border: 2px dashed #ccc; border-radius: 8px;">
+                            <i class="far fa-user-circle" style="font-size: 100px; color: #999;"></i>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <form action="{% url "users:edit_image" %}" method="post" class="uniForm" enctype="multipart/form-data" id="imageUploadForm">
+                {% csrf_token %}
+                <div class="custom-file-upload mb-3">
+                    <label for="id_image" class="btn button-color text-white w-100" style="cursor: pointer; padding: 12px;">
+                        <i class="fas fa-cloud-upload-alt mr-2"></i>{% translate "Vælg billede" %}
+                    </label>
+                    <input type="file" name="image" accept="image/*" id="id_image" class="d-none" onchange="previewImage(this)">
+                    <small class="form-text text-muted text-center d-block mt-2">{% translate "PNG, JPG eller GIF. Maksimal størrelse: 5MB" %}</small>
+                </div>
         </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary text-white-50 float-left" data-dismiss="modal">{% translate "Tilbage" %}</button>
-                        <input class="btn button-color text-white-50 float-right" type="submit" value="{% translate "Gem" %}">
+                        <button type="button" class="btn btn-secondary text-white float-left" data-dismiss="modal">{% translate "Tilbage" %}</button>
+                        <input class="btn button-color text-white float-right" type="submit" value="{% translate "Gem" %}">
                 </div>
             </form>
+            <script>
+                function previewImage(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            var previewContainer = document.getElementById('imagePreview');
+                            var previewPlaceholder = document.getElementById('previewPlaceholder');
+                            
+                            if (previewPlaceholder) {
+                                previewPlaceholder.style.display = 'none';
+                            }
+                            
+                            var img = document.getElementById('previewImg');
+                            if (!img) {
+                                img = document.createElement('img');
+                                img.id = 'previewImg';
+                                img.className = 'img-fluid rounded mx-auto d-block';
+                                img.style.maxHeight = '300px';
+                                img.style.objectFit = 'contain';
+                                previewContainer.appendChild(img);
+                            }
+                            img.src = e.target.result;
+                        };
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+            </script>
       </div>
     </div>
 </div>
