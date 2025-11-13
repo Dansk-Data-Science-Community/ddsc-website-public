@@ -19,8 +19,8 @@ class NewsSubscriberResource(resources.ModelResource):
 
     class Meta:
         model = NewsSubscriber
-        fields = ("user_email",)
-        export_order = ("user_email",)
+        fields = ("email", "full_name", "frequency", "user_email")
+        export_order = ("email", "full_name", "frequency", "user_email")
 
     def get_queryset(self):
         return super().get_queryset().filter(allow_newsletters=True)
@@ -29,8 +29,10 @@ class NewsSubscriberResource(resources.ModelResource):
 @admin.register(NewsSubscriber)
 class NewsSubscriberAdmin(ExportMixin, admin.ModelAdmin):
     resource_class = NewsSubscriberResource
-    list_display = ["created", "user"]
-    list_filter = ["created"]
+    list_display = ["email", "full_name", "frequency", "allow_newsletters", "confirmed_at"]
+    list_filter = ["created", "allow_newsletters", "frequency"]
+    search_fields = ["email", "full_name"]
+    readonly_fields = ["created", "consent_timestamp", "confirmed_at", "unsubscribed_at"]
 
     def get_queryset(self, request):
         queryset = super().get_queryset(request)
