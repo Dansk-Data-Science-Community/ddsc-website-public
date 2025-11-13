@@ -17,6 +17,7 @@ class Command(BaseCommand):
         )
         event_group, created = Group.objects.get_or_create(name="Eventeditor")
         if created:
+
             event_group.permissions.add(*permissions_list)
             event_group.save()
             self.stdout.write(

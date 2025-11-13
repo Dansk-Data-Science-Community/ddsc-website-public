@@ -1,0 +1,90 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# CI/CD
+.github
+.vscode
+
+# Documentation
+*.md
+LICENSE
+ROADMAP.md
+HACKATHON_INITIATIVES.md
+NEWS.md
+PRODUCT_REQUIREMENTS.md
+TECHNICAL_REQUIREMENTS.md
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+/media
+/static_root
+*.pot
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Docker
+docker-compose.override.yml
+
+# Local development files
+*.local
+
+# Node modules (if any)
+node_modules/
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/

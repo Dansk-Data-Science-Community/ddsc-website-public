@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "members.apps.MembersConfig",
     "polls.apps.PollsConfig",
     "stats.apps.StatsConfig",
+    "opensource.apps.OpensourceConfig",
     "easy_thumbnails",
     "image_cropping",
     "crispy_forms",

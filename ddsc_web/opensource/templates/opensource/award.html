@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}DDSC Open Source Award{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'opensource/award.css' %}">
+
+<div class="opensource-award-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">🏆 2025</div>
+            <h1 class="hero-title">DDSC Open Source Award</h1>
+            <p class="hero-subtitle">Celebrating excellence in the open source community</p>
+            <p class="partnership-text">In collaboration with <strong>IDA</strong> and <strong>DDSA</strong></p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScPCWRUF96iHU6m_EFLe7HBlXxiSjCtDC0kLRWMjj3xLbrqwA/viewform" target="_blank" class="btn btn-hero">Nominate Now</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <!-- Introduction -->
+                    <div class="intro-box">
+                        <h2>What are the best open source projects out there? 💫</h2>
+                        <p class="lead">
+                            In an effort to reward and recognize the open source community, DDSC in collaboration with 
+                            <strong>IDA</strong> and <strong>DDSA</strong> is proud to announce the DDSC Open Source Award!
+                        </p>
+                    </div>
+
+                    <!-- Award Categories -->
+                    <div class="categories-section">
+                        <h3>Award Categories</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="category-card">
+                                    <div class="category-icon">🚀</div>
+                                    <h4>Innovation</h4>
+                                    <p>Projects that push boundaries and introduce groundbreaking solutions</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="category-card">
+                                    <div class="category-icon">🤝</div>
+                                    <h4>Community Impact</h4>
+                                    <p>Projects that make a significant difference in their communities</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="category-card">
+                                    <div class="category-icon">📚</div>
+                                    <h4>Documentation Excellence</h4>
+                                    <p>Projects with outstanding documentation and learning resources</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="category-card">
+                                    <div class="category-icon">🌱</div>
+                                    <h4>Rising Star</h4>
+                                    <p>Emerging projects with exceptional potential</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nominate Section -->
+                    <div class="nominate-section">
+                        <h2>How to Nominate</h2>
+                        <div class="nomination-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Choose a Project</h4>
+                                    <p>Think about open source projects that have impressed you with their innovation, community impact, documentation, or potential.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Fill the Form</h4>
+                                    <p>Click the button below to access our nomination form. Provide project details, category, and why you think it deserves recognition.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Submit</h4>
+                                    <p>You can nominate multiple projects! Each nomination helps us celebrate the incredible work being done in the open source community.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScPCWRUF96iHU6m_EFLe7HBlXxiSjCtDC0kLRWMjj3xLbrqwA/viewform" target="_blank" class="btn btn-primary btn-lg">Submit Your Nomination</a>
+                    </div>
+
+                    <!-- Important Dates -->
+                    <div class="deadline-box">
+                        <div class="deadline-icon">📅</div>
+                        <h3>Important Dates</h3>
+                        <p class="deadline-text">
+                            Nomination Deadline: <strong>December 1, 2025</strong>
+                        </p>
+                        <p class="deadline-subtext">
+                            Let's promote our community and show each other the best of what's out there! 🌟
+                        </p>
+                    </div>
+
+
+
+                    <!-- About Section -->
+                    <div class="about-section">
+                        <h3>About the Award</h3>
+                        <p class="about-intro">
+                            The DDSC Open Source Award celebrates innovation, collaboration, and excellence in the 
+                            open source community. This initiative brings together three leading organizations:
+                        </p>
+                        <div class="organizations">
+                            <div class="org-card">
+                                <div class="org-logo">
+                                    <img src="{% static 'ddsc-logo-base.svg' %}" alt="DDSC Logo">
+                                </div>
+                                <h5>DDSC</h5>
+                                <p>Danish Data Science Community - Strengthening Denmark's open source culture through community-driven projects</p>
+                            </div>
+                            <div class="org-card">
+                                <div class="org-logo">
+                                    <img src="{% static 'opensource/ida-logo.svg' %}" alt="IDA Logo">
+                                </div>
+                                <h5>IDA</h5>
+                                <p>Representing 175,000 engineers, science graduates, and IT specialists who are key to Denmark's digital future</p>
+                            </div>
+                            <div class="org-card">
+                                <div class="org-logo ddsa-logo">
+                                    <span class="ddsa-text">DDSA</span>
+                                </div>
+                                <h5>DDSA</h5>
+                                <p>Danish Data Science Academy - Advancing data science education and professional development</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="cta-section">
+                        <h3>Ready to Nominate?</h3>
+                        <p>Help us recognize the best open source projects and contributors!</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScPCWRUF96iHU6m_EFLe7HBlXxiSjCtDC0kLRWMjj3xLbrqwA/viewform" target="_blank" class="btn btn-cta">Submit Your Nomination</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
