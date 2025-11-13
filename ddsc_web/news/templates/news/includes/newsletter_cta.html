@@ -1,0 +1,60 @@
+{% load i18n %}
+<div class="card shadow-sm newsletter-card">
+    <div class="card-body p-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-3">{% translate "Stay in the DDSC loop" %}</h3>
+                <p class="text-muted">
+                    {% translate "Pick the topics you care about and we’ll send curated updates about community events, open-source sprints and learning sessions." %}
+                </p>
+                <ul class="text-muted small ps-3">
+                    <li>{% translate "Double opt-in for GDPR compliance" %}</li>
+                    <li>{% translate "One-click unsubscribe anytime" %}</li>
+                    <li>{% translate "No spam – only community news" %}</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <form method="post" action="{% url 'news:newsletter_signup' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label" for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                        {{ form.email }}
+                        {% if form.email.help_text %}
+                            <div class="form-text">{{ form.email.help_text }}</div>
+                        {% endif %}
+                        {% for error in form.email.errors %}
+                            <div class="text-danger small">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="{{ form.full_name.id_for_label }}">{{ form.full_name.label }}</label>
+                        {{ form.full_name }}
+                        {% if form.full_name.help_text %}
+                            <div class="form-text">{{ form.full_name.help_text }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">{{ form.interests.label }}</label>
+                        {{ form.interests }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="{{ form.frequency.id_for_label }}">{{ form.frequency.label }}</label>
+                        {{ form.frequency }}
+                    </div>
+                    <div class="form-check mb-3">
+                        {{ form.consent_gdpr }}
+                        <label class="form-check-label" for="{{ form.consent_gdpr.id_for_label }}">
+                            {{ form.consent_gdpr.label }}
+                        </label>
+                        {% for error in form.consent_gdpr.errors %}
+                            <div class="text-danger small">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <button class="btn btn-primary w-100" type="submit">
+                        {% translate "Subscribe to newsletter" %}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -11,10 +11,10 @@ admin.site.site_header = "Dansk Data Science Community"
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", TemplateView.as_view(template_name="home.html")),
-    path(
-        "favicon.ico", RedirectView.as_view(url=staticfiles_storage.url("favicon.ico"))
-    ),
+    path("", HomePageView.as_view(), name="home"),
+    # path(
+    #     "favicon.ico", RedirectView.as_view(url=staticfiles_storage.url("favicon.ico"))
+    # ),
     path("events/", include("events.urls", namespace="events"), name="events"),
     path("news/", include("news.urls", namespace="news"), name="news"),
     path("users/", include("users.urls"), name="users"),
