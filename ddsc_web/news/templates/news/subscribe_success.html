@@ -13,7 +13,11 @@
         <i class="checkmark">✓</i>
       </div>
         <h1>{% translate "Tak for tilmeldingen!" %}</h1>
-        <p>{% translate "Vi har fået din anmodning om at modtage nyhedsbrev på" %} <b>{{ subscriber.email }}</b> <br/>{% translate "Tjek din email!" %}</p>
+        <p>
+            {% translate "Vi har fået din anmodning om at modtage nyhedsbrev på" %}
+            {% if subscriber_email %}<b>{{ subscriber_email }}</b>{% endif %}
+            <br/>{% translate "Tjek din email for at bekræfte tilmeldingen." %}
+        </p>
       </div>
       </section>
 
