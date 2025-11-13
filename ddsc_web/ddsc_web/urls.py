@@ -19,6 +19,7 @@ urlpatterns = [
     path("users/", include("users.urls"), name="users"),
     path("members/", include("members.urls"), name="members"),
     path("polls/", include("polls.urls"), name="polls"),
+    path("opensource-award/", include("opensource.urls", namespace="opensource"), name="opensource"),
     path(
         "privacy/",
         TemplateView.as_view(template_name="privacy/privacy.html"),

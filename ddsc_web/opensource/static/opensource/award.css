@@ -1,0 +1,309 @@
+/* DDSC Open Source Award Styles */
+
+.opensource-award-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #1f4e78 0%, #2c5282 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    opacity: 0.95;
+}
+
+.partnership-text {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Content Section */
+.content-section {
+    padding: 60px 20px;
+}
+
+.intro-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    border-left: 5px solid #1f4e78;
+}
+
+.intro-box h2 {
+    color: #1f4e78;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.intro-box .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Nominate Section */
+.nominate-section {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.nominate-section h2 {
+    color: #1f4e78;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.qr-section {
+    margin-top: 30px;
+}
+
+.qr-instruction {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.qr-code-placeholder {
+    display: inline-block;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Deadline Box */
+.deadline-box {
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.deadline-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.deadline-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Partners Section */
+.partners-section {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.partners-section h3 {
+    color: #1f4e78;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.partner-logo {
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+}
+
+.logo-ddsc {
+    width: 100px;
+    height: 100px;
+}
+
+.logo-ida {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000;
+    font-family: Arial, sans-serif;
+}
+
+.logo-it {
+    display: block;
+    font-size: 1.5rem;
+    color: #1f4e78;
+    margin-top: -10px;
+}
+
+.logo-ddsa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ddsa-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 2px;
+}
+
+.ddsa-subtitle {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* About Section */
+.about-section {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.about-section h3 {
+    color: #1f4e78;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 1.6;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+/* Categories Section */
+.categories-section {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.categories-section h3 {
+    color: #1f4e78;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.category-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #1f4e78;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.category-card h4 {
+    color: #1f4e78;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #1f4e78 0%, #2c5282 100%);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #1f4e78;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2c5282;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .partner-logos {
+        flex-direction: column;
+    }
+    
+    .intro-box, .nominate-section, .about-section, .categories-section {
+        padding: 25px;
+    }
+}

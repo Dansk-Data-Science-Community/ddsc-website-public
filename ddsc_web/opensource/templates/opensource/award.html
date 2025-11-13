@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}DDSC Open Source Award{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'opensource/award.css' %}">
+
+<div class="opensource-award-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">DDSC Open Source Award</h1>
+            <p class="hero-subtitle">Rewarding and recognizing excellence in the open source community</p>
+            <p class="partnership-text">In collaboration with <strong>IDA</strong> and <strong>DDSA - Danish Data Science Academy</strong></p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- Introduction -->
+                    <div class="intro-box">
+                        <h2>What are the best open source projects out there? 💫</h2>
+                        <p class="lead">
+                            In an effort to reward and recognize the open source community, DDSC in collaboration with 
+                            <strong>IDA</strong> and <strong>DDSA</strong> is happy to announce the DDSC Open Source Award!
+                        </p>
+                    </div>
+
+                    <!-- Nominate Section -->
+                    <div class="nominate-section">
+                        <h2>Nominate</h2>
+                        <p>
+                            We encourage you to nominate your favorite open source project, feel free to nominate multiple!
+                        </p>
+                        <div class="qr-section">
+                            <p class="qr-instruction">Use QR code to nominate an OS project</p>
+                            <div class="qr-code-placeholder">
+                                <!-- QR Code would be inserted here -->
+                                <svg width="200" height="200" viewBox="0 0 200 200">
+                                    <rect width="200" height="200" fill="#000"/>
+                                    <rect x="10" y="10" width="60" height="60" fill="#fff"/>
+                                    <rect x="130" y="10" width="60" height="60" fill="#fff"/>
+                                    <rect x="10" y="130" width="60" height="60" fill="#fff"/>
+                                    <rect x="25" y="25" width="30" height="30" fill="#000"/>
+                                    <rect x="145" y="25" width="30" height="30" fill="#000"/>
+                                    <rect x="25" y="145" width="30" height="30" fill="#000"/>
+                                </svg>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-lg mt-3">Nominate a Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Important Dates -->
+                    <div class="deadline-box">
+                        <h3>📅 Important Dates</h3>
+                        <p class="deadline-text">
+                            <strong>Deadline for nomination:</strong> December 1
+                        </p>
+                        <p>
+                            Let's promote our community and show each other the best of what's out there! 🌟
+                        </p>
+                    </div>
+
+                    <!-- Partners Section -->
+                    <div class="partners-section">
+                        <h3>In Partnership With</h3>
+                        <div class="partner-logos">
+                            <div class="partner-logo">
+                                <img src="{% static 'ddsc-logo-base.svg' %}" alt="DDSC Logo" class="logo-ddsc">
+                            </div>
+                            <div class="partner-logo">
+                                <div class="logo-ida">IDA<span class="logo-it">IT</span></div>
+                            </div>
+                            <div class="partner-logo">
+                                <div class="logo-ddsa">
+                                    <span class="ddsa-text">DDSA</span>
+                                    <span class="ddsa-subtitle">Danish Data Science Academy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Section -->
+                    <div class="about-section">
+                        <h3>About the Award</h3>
+                        <p>
+                            The DDSC Open Source Award celebrates innovation, collaboration, and excellence in the 
+                            open source community. This initiative brings together three leading organizations:
+                        </p>
+                        <ul class="feature-list">
+                            <li>
+                                <strong>DDSC (Danish Data Science Community)</strong> - Strengthening Denmark's open source 
+                                culture through community-driven projects
+                            </li>
+                            <li>
+                                <strong>IDA</strong> - Representing 175,000 engineers, science graduates, and IT specialists 
+                                who are key to Denmark's digital future
+                            </li>
+                            <li>
+                                <strong>DDSA (Danish Data Science Academy)</strong> - Advancing data science education 
+                                and professional development
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="categories-section">
+                        <h3>Award Categories</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="category-card">
+                                    <h4>🚀 Innovation</h4>
+                                    <p>Projects that push boundaries and introduce groundbreaking solutions</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="category-card">
+                                    <h4>🤝 Community Impact</h4>
+                                    <p>Projects that make a significant difference in their communities</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="category-card">
+                                    <h4>📚 Documentation Excellence</h4>
+                                    <p>Projects with outstanding documentation and learning resources</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="category-card">
+                                    <h4>🌱 Rising Star</h4>
+                                    <p>Emerging projects with exceptional potential</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="cta-section text-center">
+                        <h3>Ready to Nominate?</h3>
+                        <p>Help us recognize the best open source projects and contributors!</p>
+                        <a href="#" class="btn btn-primary btn-lg">Submit Your Nomination</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
