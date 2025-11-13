@@ -11,7 +11,7 @@ from django.utils.translation import gettext_lazy as _
 from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_decode
 from django.views import View
-from .tasks import send_activation_email
+from .tasks import send_activation_email, onboarding_welcome_sequence
 
 from .forms import (
     LoginForm,
@@ -144,13 +144,10 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_verified = True
         user.save()
-        return render(
-            request,
-            "auth/activation_done.html",
-            {
-                "user": user,
-            },
-        )
+        onboarding_welcome_sequence.delay(user.pk)
+        login(request, user)
+        messages.success(request, _("Du er nu aktiveret og logget ind."))
+        return redirect("users:dashboard")
     else:
         return render(request, "auth/activation_failed.html", {})
 
