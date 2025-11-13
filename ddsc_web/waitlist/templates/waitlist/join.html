@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Join Waitlist{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1>Join Event Waitlist</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_email">Email</label>
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    <label for="id_event_name">Event</label>
+                    {{ form.event_name }}
+                </div>
+                <button type="submit" class="btn btn-primary">Join Waitlist</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

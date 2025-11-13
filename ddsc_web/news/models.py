@@ -12,6 +12,8 @@ class NewsSubscriber(models.Model):
         null=True,
     )
     created = models.DateTimeField(auto_now_add=True)
+    email = models.EmailField(unique=True, blank=True, null=True)
+    full_name = models.CharField(max_length=255, blank=True)
     allow_newsletters = models.BooleanField(default=True)
 
     @property
