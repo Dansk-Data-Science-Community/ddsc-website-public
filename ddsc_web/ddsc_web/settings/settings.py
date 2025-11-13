@@ -17,6 +17,7 @@ from django.contrib.messages import constants as messages
 from dotenv import load_dotenv
 from easy_thumbnails.conf import Settings as thumbnail_settings
 from django.utils.translation import gettext_lazy as _
+from reminders.apps import RemindersConfig # Explicit import for debugging
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -49,9 +50,8 @@ INSTALLED_APPS = [
     "members.apps.MembersConfig",
     "polls.apps.PollsConfig",
     "stats.apps.StatsConfig",
-    "pages.apps.PagesConfig",
-    "oss.apps.OssConfig",
     "reminders.apps.RemindersConfig",
+    "meetups.apps.MeetupsConfig",
     "easy_thumbnails",
     "image_cropping",
     "crispy_forms",
