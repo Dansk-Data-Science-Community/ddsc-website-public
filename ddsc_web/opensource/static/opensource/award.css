@@ -1,300 +1,486 @@
-/* DDSC Open Source Award Styles */
+/* DDSC Open Source Award Styles - Modern Design */
 
 .opensource-award-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: #ffffff;
 }
 
-/* Hero Section */
+/* Hero Section - Modern gradient with red accent */
 .hero-section {
-    background: linear-gradient(135deg, #1f4e78 0%, #2c5282 100%);
+    background: linear-gradient(135deg, #A91F1F 0%, #7a1616 100%);
     color: white;
-    padding: 80px 20px;
+    padding: 100px 20px 80px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
 }
 
 .hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
     opacity: 0.95;
+    font-weight: 400;
 }
 
 .partnership-text {
     font-size: 1.1rem;
     opacity: 0.9;
+    margin-bottom: 32px;
+}
+
+.btn-hero {
+    display: inline-block;
+    background: white;
+    color: #A91F1F;
+    padding: 16px 48px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 16px;
+}
+
+.btn-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    color: #7a1616;
+    text-decoration: none;
 }
 
 /* Content Section */
 .content-section {
-    padding: 60px 20px;
+    padding: 80px 20px;
+    background: #f8f9fa;
 }
 
+/* Intro Box - Modern card design */
 .intro-box {
     background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    border-left: 5px solid #1f4e78;
+    padding: 48px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 48px;
+    border-left: 5px solid #A91F1F;
 }
 
 .intro-box h2 {
-    color: #1f4e78;
-    font-size: 2rem;
-    margin-bottom: 20px;
+    color: #1a1a1a;
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 .intro-box .lead {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     line-height: 1.8;
-    color: #333;
+    color: #4a5568;
 }
 
-/* Nominate Section */
+/* Nominate Section - Step-by-step design */
 .nominate-section {
     background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    text-align: center;
+    padding: 48px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 48px;
 }
 
 .nominate-section h2 {
-    color: #1f4e78;
+    color: #1a1a1a;
     font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.qr-section {
-    margin-top: 30px;
-}
-
-.qr-instruction {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.qr-code-placeholder {
-    display: inline-block;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-/* Deadline Box */
-.deadline-box {
-    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
-    color: white;
-    padding: 30px;
-    border-radius: 12px;
     margin-bottom: 40px;
     text-align: center;
+    font-weight: 700;
+}
+
+.nomination-steps {
+    margin-bottom: 40px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #A91F1F 0%, #7a1616 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 24px;
+}
+
+.step-content h4 {
+    color: #1a1a1a;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.step-content p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.nominate-section .btn-primary {
+    display: block;
+    margin: 0 auto;
+    max-width: 320px;
+}
+
+/* Deadline Box - Modern alert style */
+.deadline-box {
+    background: linear-gradient(135deg, #fef5e7 0%, #fdebd0 100%);
+    padding: 40px;
+    border-radius: 16px;
+    margin-bottom: 48px;
+    text-align: center;
+    border: 2px solid #f39c12;
+}
+
+.deadline-icon {
+    font-size: 4rem;
+    margin-bottom: 16px;
 }
 
 .deadline-box h3 {
     font-size: 1.8rem;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+    font-weight: 700;
 }
 
 .deadline-text {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    color: #d35400;
 }
 
-/* Partners Section */
-.partners-section {
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    text-align: center;
+.deadline-subtext {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin: 0;
 }
 
-.partners-section h3 {
-    color: #1f4e78;
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-}
-
-.partner-logos {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.partner-logo {
-    flex: 1;
-    min-width: 150px;
-    max-width: 200px;
-}
-
-.logo-ddsc {
-    width: 100px;
-    height: 100px;
-}
-
-.logo-ida-img {
-    width: 120px;
-    height: auto;
-}
-
-.logo-ddsa {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.ddsa-text {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #000;
-    letter-spacing: 2px;
-}
-
-.ddsa-subtitle {
-    font-size: 0.8rem;
-    color: #666;
-    text-transform: uppercase;
-    margin-top: 5px;
-}
-
-/* About Section */
+/* About Section - Organization cards */
 .about-section {
     background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    padding: 48px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 48px;
 }
 
 .about-section h3 {
-    color: #1f4e78;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    color: #1a1a1a;
+    font-size: 2rem;
+    margin-bottom: 24px;
+    font-weight: 700;
+    text-align: center;
 }
 
-.feature-list {
-    list-style: none;
-    padding: 0;
+.about-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 48px;
+    line-height: 1.8;
 }
 
-.feature-list li {
-    padding: 15px 0;
-    border-bottom: 1px solid #e0e0e0;
+.organizations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.org-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.org-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    background: white;
+}
+
+.org-logo {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.org-logo img {
+    max-width: 120px;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.org-logo.ddsa-logo .ddsa-text {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 2px;
+}
+
+.org-card h5 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.org-card p {
+    color: #4a5568;
     line-height: 1.6;
+    margin: 0;
 }
 
-.feature-list li:last-child {
-    border-bottom: none;
-}
-
-/* Categories Section */
+/* Categories Section - Modern card grid */
 .categories-section {
     background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    padding: 48px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 48px;
 }
 
 .categories-section h3 {
-    color: #1f4e78;
-    font-size: 1.8rem;
-    margin-bottom: 30px;
+    color: #1a1a1a;
+    font-size: 2rem;
+    margin-bottom: 40px;
     text-align: center;
+    font-weight: 700;
 }
 
 .category-card {
     background: #f8f9fa;
-    padding: 25px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border-left: 4px solid #1f4e78;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 32px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    height: 100%;
 }
 
 .category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(169, 31, 31, 0.15);
+    border-color: #A91F1F;
+    background: white;
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
 }
 
 .category-card h4 {
-    color: #1f4e78;
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+    color: #1a1a1a;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: 700;
 }
 
-/* CTA Section */
+.category-card p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* CTA Section - Modern gradient with large button */
 .cta-section {
-    background: linear-gradient(135deg, #1f4e78 0%, #2c5282 100%);
+    background: linear-gradient(135deg, #A91F1F 0%, #7a1616 100%);
     color: white;
-    padding: 60px 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 80px 48px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(169, 31, 31, 0.3);
+    text-align: center;
 }
 
 .cta-section h3 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    font-weight: 700;
 }
 
 .cta-section p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    opacity: 0.95;
 }
 
-/* Buttons */
+/* Buttons - Modern styling */
 .btn-primary {
-    background-color: #1f4e78;
+    background: #A91F1F;
+    color: white;
     border: none;
-    padding: 15px 40px;
+    padding: 16px 48px;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 700;
     border-radius: 50px;
     transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(169, 31, 31, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #2c5282;
+    background: #7a1616;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(169, 31, 31, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-cta {
+    background: white;
+    color: #A91F1F;
+    border: none;
+    padding: 18px 56px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    color: #7a1616;
+    text-decoration: none;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .hero-subtitle {
         font-size: 1.2rem;
     }
-    
-    .partner-logos {
-        flex-direction: column;
+
+    .hero-section {
+        padding: 60px 20px 50px;
+    }
+
+    .btn-hero {
+        padding: 14px 36px;
+        font-size: 1rem;
     }
     
-    .intro-box, .nominate-section, .about-section, .categories-section {
-        padding: 25px;
+    .content-section {
+        padding: 48px 20px;
+    }
+    
+    .intro-box, 
+    .nominate-section, 
+    .about-section, 
+    .categories-section,
+    .cta-section {
+        padding: 32px 24px;
+    }
+
+    .organizations {
+        grid-template-columns: 1fr;
+    }
+
+    .step {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    .cta-section {
+        padding: 48px 32px;
+    }
+
+    .cta-section h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .intro-box h2,
+    .categories-section h3,
+    .nominate-section h2,
+    .about-section h3 {
+        font-size: 1.6rem;
     }
 }
